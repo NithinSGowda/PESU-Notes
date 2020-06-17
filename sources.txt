@@ -1,0 +1,21 @@
+Search results https://startbootstrap.com/snippets/portfolio-one-column/
+Item page https://startbootstrap.com/snippets/portfolio-item/
+Sign In https://startbootstrap.com/snippets/sign-in-split/
+
+
+Themes :
+https://colorlib.com/preview/#skillhunt
+https://colorlib.com/wp/template/crypto-currency/
+
+
+<i class='bx bxs-like bx-spin-hover'></i>
+<i class='bx bxs-like bx-tada-hover'></i>
+<i class='bx bxs-like bx-flashing-hover'></i>
+<i class='bx bxs-like bx-burst-hover'></i>
+<i class='bx bxs-like bx-fade-left-hover'></i>
+<i class='bx bxs-like bx-fade-right-hover'></i>
+<i class='bx bxs-like bx-fade-up-hover'></i>
+<i class='bx bxs-like bx-fade-down-hover'></i>
+
+
+cd /var/www/pesu && sudo git stash && sudo git pull --rebase origin master
