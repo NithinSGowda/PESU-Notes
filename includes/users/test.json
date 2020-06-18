@@ -1,0 +1,28 @@
+{
+    "PES2201800285": [{
+
+        "PRN": "PES2201800285",
+        "SRN": "1U19BB018",
+        "Name": "Qazi Amaan",
+        "Class": "300",
+        "Section": "C",
+        "Cycle": "NA",
+        "Department": "",
+        "Branch": "CSE",
+        "Campus": "EC"
+
+    }],
+    "PES2201800654": [{
+
+        "PRN": "PES2201800654",
+        "SRN": "",
+        "Name": "Test",
+        "Class": "300",
+        "Section": "C",
+        "Cycle": "NA",
+        "Department": "",
+        "Branch": "CSE",
+        "Campus": "EC"
+
+    }]
+}
