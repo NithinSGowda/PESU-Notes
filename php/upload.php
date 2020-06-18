@@ -7,29 +7,30 @@
     if (!$conn) {
         echo '<script>alert("DATABASE NOT CONNECTED")</script>';
     }
-    $author = $_POST["author"];
+    if(isset($_POST['btn'])){
+    // $author = $_POST["author"];
+    $author = 3;
     $title = $_POST["title"];
     $desc = $_POST["desc"];
-    $sub = $_POST["sub"];
+    $sub = $_POST["subject"];
     $sem = $_POST["sem"];
     $branch = $_POST["branch"];
 
      $f_name=$_FILES['file']['name'];
      $t_name=$_FILES['file']['tmp_name'];
-     $upload='content';
+     $upload = '/'.'content';
      if( is_dir($upload.'/'.$sem.'/'.$branch) === false )
         {
-            mkdir($upload.'/'.$sem.'/'.$branch);
+            mkdir($upload.'/'.$sem.'/'.$branch,0777,true);
         }
     if( is_dir($upload.'/'.$sem.'/'.$branch.'/'.$sub) === false )
         {
-            mkdir($upload.'/'.$sem.'/'.$branch.'/'.$sub);
+            mkdir($upload.'/'.$sem.'/'.$branch.'/'.$sub,0777,true);
         }
-     $extend=end((explode(".", $f_name)));
-     $file_url = $upload.'/'.$sem.'/'.$branch.'/'.$sub.'/'.now().$f_name;
+     $file_url = $upload.'/'.$sem.'/'.$branch.'/'.$sub.'/'.date("his").$f_name;
      $fupload=move_uploaded_file($t_name,$file_url);
 
-    $sql = "INSERT INTO posts (created_by, sem, title, post_description, post_subject, post_branch, file_url) VALUES ('".$author."', '".$sem."','".$title."','".$desc."','".$sub."','".$branch."','".$file_url."')";
+    $sql = "INSERT INTO posts (created_by, sem, post_title, post_description, post_subject, post_branch, file_url) VALUES ('".$author."', '".$sem."','".$title."','".$desc."','".$sub."','".$branch."','".$file_url."')";
     if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
     } else {
@@ -38,6 +39,8 @@
     $conn->close();
     if($fupload){
         echo '<script>alert("File uploaded successfully")</script>';
+        header("Location: /index.php");
     }
-    header("Location: index.php");
+    
+}
 ?>

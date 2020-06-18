@@ -65,7 +65,7 @@
        
           <div class="col-md-12 col-lg-8 mb-5">
           
-			     <form action="php/upload.php" class="p-5 bg-white" method="POST">
+			     <form action="php/upload.php" class="p-5 bg-white" method="POST" enctype="multipart/form-data">
             <input type="text" id="fullname" name="author" class="form-control" value="NithinSGowda" disabled hidden>
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
@@ -146,7 +146,7 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="submit" value="Upload" class="btn btn-primary  py-2 px-5">
+                  <input type="submit" name="btn" value="Upload" class="btn btn-primary  py-2 px-5">
                 </div>
               </div>
 
