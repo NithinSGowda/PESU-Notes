@@ -1,23 +1,25 @@
 
 <?php
 
-    $PATH = '/var/www/pesu';
+    $PATH = '/var/www/html';
     require_once $PATH.'/libraries/config/config.php';
-    $targetDir = $PATH.'/uploads/'; 
 
     session_start();
     if(!isset($_SESSION['user_logged_in'])){
       header('Location : /signIn.php');
     }
 
-
+    
+    
     if ($_SERVER['REQUEST_METHOD'] === 'POST') 
   {
-
+    $data_to_db = array_filter($_POST);
+    $targetDir = $PATH.'/uploads/'.$data_to_db['post_branch'].'/'.$data_to_db['post_semester']; 
+    
     $allowTypes = array('jpg','png','jpeg','gif'); 
     $statusMsg = $errorMsg = $insertValuesSQL = $errorUpload = $errorUploadType = ''; 
     $fileNames = array_filter($_FILES['files']['name']); 
-    
+  
     if(!empty($fileNames)){ 
         foreach($_FILES['files']['name'] as $key=>$val){ 
             $fileName = uniqid().'-'.substr(basename($_FILES['files']['name'][$key]),0,25); 
@@ -43,7 +45,7 @@
             exit();
         } 
 
-    $data_to_db = array_filter($_POST);
+
 
     $data_to_db['created_by'] = $_SESSION['user_id'];
     $data_to_db['created_at'] = date('Y-m-d');
