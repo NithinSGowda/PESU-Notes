@@ -10,8 +10,8 @@ require_once BASE_PATH . '/lib/MysqliDb/MysqliDb.php';
 require_once BASE_PATH . '/helpers/helpers.php';
 
 define('DB_HOST', "localhost");
-define('DB_USER', "root");
-define('DB_PASSWORD', "9419002492");
+define('DB_USER', "pesu");
+define('DB_PASSWORD', "pesunith");
 define('DB_NAME', "pesu_notese");
 
 function getDbInstance() {
