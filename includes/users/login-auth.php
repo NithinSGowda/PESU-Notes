@@ -1,5 +1,5 @@
 <?php
-    require_once '/var/www/html/libraries/config/config.php';
+    require_once '/var/www/pesu/libraries/config/config.php';
     session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
