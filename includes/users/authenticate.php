@@ -1,5 +1,6 @@
 <?php
-    require_once '/var/www/pesu/libraries/config/config.php';
+    $PATH = '/var/www/html';
+    require_once $PATH.'/libraries/config/config.php';
     ini_set("allow_url_fopen", 1);        
 
     $json = file_get_contents('test.json');
