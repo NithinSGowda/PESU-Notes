@@ -1,5 +1,5 @@
 <?php
-    require_once '/var/www/html/libraries/config/config.php';
+    require_once '/var/www/pesu/libraries/config/config.php';
     ini_set("allow_url_fopen", 1);        
 
     $json = file_get_contents('test.json');
