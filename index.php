@@ -41,15 +41,35 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="job-post.html" class="nav-link">Browse Notes</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="job-post.html" class="nav-link">Account/Sign In</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">About Us</a></li>
                     <li class="nav-item cta mr-md-1"><a href="upload.html" class="nav-link">Upload Notes</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- END nav -->
+    <?php 
+        require_once '/var/www/pesu/libraries/config/config.php';
+        $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME);
+        if (!$conn) {
+            echo '<script>alert("DATABASE NOT CONNECTED")</script>';
+        }
+        $query = "SELECT COUNT(post_id) AS total from posts";
+        $result = $conn->query($query);
+        $row = $result->fetch_assoc();
+        $notes = $row["total"];
 
+        $query = "SELECT COUNT(user_srn) AS total from user_profiles";
+        $result = $conn->query($query);
+        $row = $result->fetch_assoc();
+        $creators = $row["total"];
+        
+        $query = "SELECT SUM(downloads) AS total from posts";
+        $result = $conn->query($query);
+        $row = $result->fetch_assoc();
+        $downloads = $row["total"];
+    ?>
     <div class="hero-wrap img" style="background-image: url(images/bg_1.jpg);">
         <div class="overlay"></div>
         <div class="container">
@@ -67,7 +87,7 @@
                                                 <span class="bx bxs-file-pdf bx-tada-hover"></span>
                                             </div>
                                             <div class="desc text-left">
-                                                <strong class="number" data-number="468">0</strong>
+                                                <strong class="number" data-number="<?php echo $notes;?>">0</strong>
                                                 <span>Notes</span>
                                             </div>
                                         </div>
@@ -80,7 +100,7 @@
                                                 <span class="flaticon-visitor bx-tada-hover"></span>
                                             </div>
                                             <div class="desc text-left">
-                                                <strong class="number" data-number="45">0</strong>
+                                                <strong class="number" data-number="<?php echo $creators;?>">0</strong>
                                                 <span>Creators</span>
                                             </div>
                                         </div>
@@ -93,7 +113,7 @@
                                                 <span class="bx bx-cloud-download bx-fade-down-hover"></span>
                                             </div>
                                             <div class="desc text-left">
-                                                <strong class="number" data-number="80000">0</strong>
+                                                <strong class="number" data-number="<?php echo $downloads;?>">0</strong>
                                                 <span>Downloads</span>
                                             </div>
                                         </div>
