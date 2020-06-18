@@ -51,7 +51,7 @@
     <!-- END nav -->
     <?php 
         require_once '/var/www/pesu/libraries/config/config.php';
-        $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME);
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         if (!$conn) {
             echo '<script>alert("DATABASE NOT CONNECTED")</script>';
         }
@@ -512,7 +512,7 @@
         </div>
     </section>
 
-
+    <?php include 'includes/footer.php'; ?>
 
 
     <!-- loader -->

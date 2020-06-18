@@ -65,7 +65,7 @@
        
           <div class="col-md-12 col-lg-8 mb-5">
           
-			     <form action="#" class="p-5 bg-white">
+			     <form action="php/upload.php" class="p-5 bg-white" method="POST">
             <input type="text" id="fullname" name="author" class="form-control" value="NithinSGowda" disabled hidden>
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
@@ -93,15 +93,15 @@
                 <div class="form-field">
                   <div class="select-wrap">
                     <select name="sem" id="" class="form-control">
-                      <option value="">Semester</option>
-                      <option value="">Sem - 1</option>
-                      <option value="">Sem - 2</option>
-                      <option value="">Sem - 3</option>
-                      <option value="">Sem - 4</option>
-                      <option value="">Sem - 5</option>
-                      <option value="">Sem - 6</option>
-                      <option value="">Sem - 7</option>
-                      <option value="">Sem - 8</option>
+                      <option value="null">Semester</option>
+                      <option value="1">Sem - 1</option>
+                      <option value="2">Sem - 2</option>
+                      <option value="3">Sem - 3</option>
+                      <option value="4">Sem - 4</option>
+                      <option value="5">Sem - 5</option>
+                      <option value="6">Sem - 6</option>
+                      <option value="7">Sem - 7</option>
+                      <option value="8">Sem - 8</option>
                     </select>
                   </div>
                 </div>
@@ -110,11 +110,11 @@
                 <div class="form-field">
                   <div class="select-wrap">
                     <select name="branch" id="" class="form-control">
-                      <option value="">Branch</option>
-                      <option value="">CSE</option>
-                      <option value="">ECE</option>
-                      <option value="">Mech</option>
-                      <option value="">others</option>
+                      <option value="null">Branch</option>
+                      <option value="CSE">CSE</option>
+                      <option value="ECE">ECE</option>
+                      <option value="Mech">Mech</option>
+                      <option value="others">others</option>
                     </select>
                   </div>
                 </div>
@@ -123,7 +123,7 @@
                 <div class="form-field">
                   <div class="select-wrap">
                     <select name="subject" id="" class="form-control">
-                      <option value="">Subject</option>
+                      <option value="null">Subject</option>
                       
                     </select>
                   </div>
