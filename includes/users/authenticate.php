@@ -1,5 +1,5 @@
 <?php
-    $PATH = '/var/www/html';
+    $PATH = '/var/www/pesu';
     require_once $PATH.'/libraries/config/config.php';
     ini_set("allow_url_fopen", 1);        
 
