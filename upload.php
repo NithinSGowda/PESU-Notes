@@ -178,7 +178,7 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="fullname">Uploading as</label>
-                  <input required type="text" name="created_by" id="fullname" class="form-control" value="<?php echo $_SESSION['user_id']; ?>" disabled>
+                  <input required type="text" name="created_by" id="fullname" class="form-control" value="<?php echo $_SESSION['user_srn']; ?>" disabled>
                 </div>
               </div>
 
