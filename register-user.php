@@ -166,7 +166,7 @@
                     <div class="text-center">
                     <a class="small" href="#">Why am i seeing this?</a></div>
                     <div class="text-center">
-                        Already have an account? <a class="small" href="#">Login here</a></div>
+                        Already have an account? <a class="small" href="signIn.php">Login here</a></div>
                 </form>
                 </div>
             </div>

@@ -137,6 +137,7 @@
                       <option value="6">Sem - 6</option>
                       <option value="7">Sem - 7</option>
                       <option value="8">Sem - 8</option>
+                      <option value="misc">Misc</option>
                     </select>
                   </div>
                 </div>
@@ -149,7 +150,7 @@
                       <option value="cse">CSE</option>
                       <option value="ece">ECE</option>
                       <option value="mech">Mech</option>
-                      <option value="others">others</option>
+                      <option value="misc">Misc</option>
                     </select>
                   </div>
                 </div>
@@ -158,8 +159,10 @@
                 <div class="form-field">
                   <div class="select-wrap">
                     <select name="post_subject" id="" class="form-control">
-                      <option value="TOC">Subject</option>
-                      
+                      <option value="misc">Subject</option>
+                      <option value="TOC">TOC</option>
+                      <option value="DBMS">DBMS</option>
+                      <option value="misc">Misc</option>
                     </select>
                   </div>
                 </div>
