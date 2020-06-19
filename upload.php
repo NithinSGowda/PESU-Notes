@@ -1,7 +1,8 @@
 
 <?php
+    ini_set('display_startup_errors', 1); ini_set('display_errors', 1); error_reporting(-1);
 
-    $PATH = '/var/www/html';
+    $PATH = '/var/www/pesu';
     require_once $PATH.'/libraries/config/config.php';
 
     session_start();
@@ -14,9 +15,9 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') 
   {
     $data_to_db = array_filter($_POST);
-    $targetDir = $PATH.'/uploads/'.$data_to_db['post_branch'].'/'.$data_to_db['post_semester']; 
+    $targetDir = $PATH.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'].'/'.$data_to_db['post_branch']; 
     
-    $allowTypes = array('jpg','png','jpeg','gif'); 
+    $allowTypes = array('jpg','png','docx','doc','pdf','ppt','pptx'); 
     $statusMsg = $errorMsg = $insertValuesSQL = $errorUpload = $errorUploadType = ''; 
     $fileNames = array_filter($_FILES['files']['name']); 
   
@@ -156,7 +157,10 @@
               <div class="form-group">
                 <div class="form-field">
                   <div class="select-wrap">
-                    <input required type="text" name="post_subject"   placeholder="Subject" class="form-control"id="">
+                    <select name="post_subject" id="" class="form-control">
+                      <option value="TOC">Subject</option>
+                      
+                    </select>
                   </div>
                 </div>
               </div>
@@ -164,7 +168,7 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="fullname">Uploading as</label>
-                  <input required type="text" name="created_by" id="fullname" class="form-control" value="<?php echo $_SESSION['user_srn']; ?>" disabled>
+                  <input required type="text" name="created_by" id="fullname" class="form-control" value="<?php echo $_SESSION['user_id']; ?>" disabled>
                 </div>
               </div>
 

@@ -1,4 +1,4 @@
-i-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pesu_notese`
+-- Database: `PESU`
 --
-CREATE DATABASE IF NOT EXISTS `pesu_notese` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `pesu_notese`;
+CREATE DATABASE IF NOT EXISTS `PESU` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `PESU`;
 
 -- --------------------------------------------------------
 
