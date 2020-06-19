@@ -7,7 +7,7 @@
 
     session_start();
     if(!isset($_SESSION['user_logged_in'])){
-      header('Location : /signIn.php');
+      header('Location : signIn.php');
     }
 
     
@@ -15,8 +15,15 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') 
   {
     $data_to_db = array_filter($_POST);
-    $targetDir = $PATH.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'].'/'.$data_to_db['post_branch']; 
-    
+    $targetDir = $PATH.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'].'/'.$data_to_db['post_subject'].'/'; 
+    if( is_dir($PATH.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch']) === false )
+        {
+            mkdir($PATH.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'],0777,true);
+        }
+    if( is_dir($PATH.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'].'/'.$data_to_db['post_subject']) === false )
+        {
+            mkdir($PATH.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'].'/'.$data_to_db['post_subject'],0777,true);
+        }
     $allowTypes = array('jpg','png','docx','doc','pdf','ppt','pptx'); 
     $statusMsg = $errorMsg = $insertValuesSQL = $errorUpload = $errorUploadType = ''; 
     $fileNames = array_filter($_FILES['files']['name']); 
@@ -42,7 +49,7 @@
         } 
         }else{ 
             $_SESSION['failure'] = 'Please select a file to upload.';
-            header('Location: /upload.php');
+            header('Location: upload.php');
             exit();
         } 
 
@@ -57,14 +64,14 @@
 
     if ($last_id)
     {
-        $_SESSION['success'] = 'Product added successfully!';
+        $_SESSION['success'] = 'Notes uploaded successfully!';
         header('Location: /upload.php');
     	  exit();
     }
     else
     {
       $_SESSION['failure'] = $db->getLastError();
-      header('Location: /upload.php');
+      header('Location: upload.php');
       exit();
     }
 }
@@ -147,9 +154,9 @@
                   <div class="select-wrap">
                     <select required  name="post_branch" id="" class="form-control">
                       <option value="">Branch</option>
-                      <option value="cse">CSE</option>
-                      <option value="ece">ECE</option>
-                      <option value="mech">Mech</option>
+                      <option value="CSE">CSE</option>
+                      <option value="ECE">ECE</option>
+                      <option value="Mech">Mech</option>
                       <option value="misc">Misc</option>
                     </select>
                   </div>
