@@ -54,10 +54,10 @@
         } 
 
 
-
+    $siteurl = "http://pesunotes.ml";
     $data_to_db['created_by'] = $_SESSION['user_id'];
     $data_to_db['created_at'] = date('Y-m-d');
-    $data_to_db['file_url'] = $insertValuesSQL;
+    $data_to_db['file_url'] = $siteurl.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'].'/'.$data_to_db['post_subject'].'/'.$insertValuesSQL;
 
     $db = getDbInstance();
     $last_id = $db->insert('posts', $data_to_db);
