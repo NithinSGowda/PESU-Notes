@@ -4,7 +4,7 @@
     session_start();
     $db = getDbInstance();
     $posts=$db->getValue('posts','count(*)'); 
-    $users=$db->getValue('user_profiles','count(user_srn)'); 
+    $users=$db->getValue('posts','count(DISTINCT(created_by))'); 
     $downloads = $db->getValue('posts','sum(downloads)'); 
 ?>
 
