@@ -6,8 +6,13 @@
                 <h2 class="mr-3 text-black"><a href="#"><?php echo $row["post_title"];?></a></h2>
             </div>
             <div class="job-post-item-body d-block d-md-flex">
-                <div class="mr-3"><span class="bx bx-download"></span><span class="number">  354</span> <span> Downloads</span></div>
-                <div><span class="bx bx-user"></span> <span> <?php echo $row["created_by"];?></span></div>
+                <div class="mr-3"><span class="bx bx-download"></span><span class="number">  <?php echo $row["downloads"];?></span> <span> Downloads</span></div>
+                <div><span class="bx bx-user"></span> <span> <?php 
+                    $query = "SELECT user_name from auth_users WHERE user_id='".$row["created_by"]."'";
+                    $result = $conn->query($query);
+                    $roww = $result->fetch_assoc();
+                    echo $roww["user_name"];
+                ?></span></div>
             </div>
         </div>
         <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
