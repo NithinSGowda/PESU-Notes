@@ -1,7 +1,7 @@
 <?php 
     ini_set('display_startup_errors', 1); ini_set('display_errors', 1); error_reporting(-1);
 
-    $PATH = '/var/www/pesu';
+    $PATH = '/var/www/html';
     require_once $PATH.'/libraries/config/config.php';
     session_start();
     $db = getDbInstance();
@@ -273,17 +273,35 @@
                         </div>
                     </div>
                     <div class="row">
-                        <?php
-                            $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-                            if (!$conn) {
-                                echo '<script>alert("DATABASE NOT CONNECTED")</script>';
-                            }
-                            $query = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 5";
-                            $result = $conn->query($query);
-                            while($row = $result->fetch_assoc()) {
-                                include 'includes/templates/postCard.php';
-                            }
-                        ?>                    
+                    <?php
+                    $db3 = getDbInstance();
+                    $db3->join("auth_users u", "p.created_by=u.user_id", "LEFT");
+                    $posts=$db3->orderBy('p.created_at','DESC')->get('posts p',8); 
+                    foreach ($posts as $post):
+                    ?>
+                         <div class="col-md-12 ftco-animate">
+                         <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
+                             <div class="one-third mb-4 mb-md-0">
+                                 <div class="job-post-item-header align-items-center">
+                                     <span class="subadge"><?php echo $post["post_subject"];?></span>
+                                     <h2 class="mr-3 text-black"><a href="#"><?php echo $post["post_title"];?></a></h2>
+                                 </div>
+                                 <div class="job-post-item-body d-block d-md-flex">
+                                     <div class="mr-3"><span class="bx bx-download"></span><span class="number">  <?php echo $post["downloads"];?></span> <span> Downloads</span></div>
+                                     <div><span class="bx bx-user"></span> <span> <?php 
+                                         echo $post["user_name"];
+                                     ?></span></div>
+                                 </div>
+                             </div>
+                             <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+                                 <a href="<?php echo $post["file_url"];?>" class="btn btn-primary py-2">Download</a>
+                             </div>
+                         </div>
+                     </div>
+                        <?php 
+                    endforeach;
+                    ?>
+
 
 
                     </div>
