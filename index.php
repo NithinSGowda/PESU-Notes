@@ -276,7 +276,7 @@
                     <?php
                     $db3 = getDbInstance();
                     $db3->join("auth_users u", "p.created_by=u.user_id", "LEFT");
-                    $posts=$db3->orderBy('p.created_at','DESC')->get('posts p',8); 
+                    $posts=$db3->orderBy('p.created_at','DESC')->get('posts p',5); 
                     foreach ($posts as $post):
                     ?>
                          <div class="col-md-12 ftco-animate">
