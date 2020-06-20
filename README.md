@@ -11,3 +11,4 @@ Points to be noted.
 - Hosted on AWS EC2 linux server, make sure to write any PHP system related commands for linux OS.
 - Make sure your code is compatible with PHP v7.2
 - Try to use relative adressing for files. I case you need the absolute adress use /var/www/pesu/ as the document root
+- www-data is not a root user for secirity purposes. Therefore don't try to use any root OS level instructions in PHP
