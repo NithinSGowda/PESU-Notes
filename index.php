@@ -22,8 +22,8 @@
             <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-10 d-flex align-items-center ftco-animate">
                     <div class="text text-center pt-5 mt-md-5">
-                        <p class="mb-4">Find Notes, Videos, and other content</p>
-                        <h1 class="mb-5">The Eassiest Way to Get Your Notes</h1>
+                        <p class="mb-4">Find Notes, Assignments, and Projects</p>
+                        <h1 class="mb-5">The Easiest Way to Get Your Notes</h1>
                         <div class="ftco-counter ftco-no-pt ftco-no-pb">
                             <div class="row">
                                 <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
