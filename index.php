@@ -1,4 +1,6 @@
 <?php 
+    ini_set('display_startup_errors', 1); ini_set('display_errors', 1); error_reporting(-1);
+
     $PATH = '/var/www/pesu';
     require_once $PATH.'/libraries/config/config.php';
     session_start();
@@ -271,105 +273,19 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">DBMS</span>
-                                        <h2 class="mr-3 text-black"><a href="#">Normal forms and relations</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="bx bx-download"></span><span class="number">  354</span> <span> Downloads</span></div>
-                                        <div><span class="bx bx-user"></span> <span> Nithin S</span></div>
-                                    </div>
-                                </div>
+                        <?php
+                            $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+                            if (!$conn) {
+                                echo '<script>alert("DATABASE NOT CONNECTED")</script>';
+                            }
+                            $query = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 5";
+                            $result = $conn->query($query);
+                            while($row = $result->fetch_assoc()) {
+                                include 'includes/templates/postCard.php';
+                            }
+                        ?>                    
 
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <a href="job-single.html" class="btn btn-primary py-2">Download</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end -->
 
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">DBMS</span>
-                                        <h2 class="mr-3 text-black"><a href="#">Normal forms and relations</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="bx bx-download"></span><span class="number">  354</span> <span> Downloads</span></div>
-                                        <div><span class="bx bx-user"></span> <span> Nithin S</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <a href="job-single.html" class="btn btn-primary py-2">Download</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">DBMS</span>
-                                        <h2 class="mr-3 text-black"><a href="#">Normal forms and relations</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="bx bx-download"></span><span class="number">  354</span> <span> Downloads</span></div>
-                                        <div><span class="bx bx-user"></span> <span> Nithin S</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <a href="job-single.html" class="btn btn-primary py-2">Download</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">DBMS</span>
-                                        <h2 class="mr-3 text-black"><a href="#">Normal forms and relations</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="bx bx-download"></span><span class="number">  354</span> <span> Downloads</span></div>
-                                        <div><span class="bx bx-user"></span> <span> Nithin S</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <a href="job-single.html" class="btn btn-primary py-2">Download</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end -->
-
-                        <div class="col-md-12 ftco-animate">
-                            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
-                                <div class="one-third mb-4 mb-md-0">
-                                    <div class="job-post-item-header align-items-center">
-                                        <span class="subadge">DBMS</span>
-                                        <h2 class="mr-3 text-black"><a href="#">Normal forms and relations</a></h2>
-                                    </div>
-                                    <div class="job-post-item-body d-block d-md-flex">
-                                        <div class="mr-3"><span class="bx bx-download"></span><span class="number">  354</span> <span> Downloads</span></div>
-                                        <div><span class="bx bx-user"></span> <span> Nithin S</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                    <a href="job-single.html" class="btn btn-primary py-2">Download</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end -->
                     </div>
                 </div>
                 <div class="col-lg-3 sidebar">
