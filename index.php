@@ -77,31 +77,11 @@
                                         <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
                                             <form action="#" class="search-job">
                                                 <div class="row no-gutters">
-                                                    <div class="col-md-7 mr-md-2">
+                                                    <div class="col-md-9 mr-md-2">
                                                         <div class="form-group">
                                                             <div class="form-field">
                                                                 <div class="icon"><span class="bx bx-search-alt bx-tada-hover"></span></div>
                                                                 <input type="text" class="form-control" placeholder="Ex : DBMS, Microprocessor   etc..">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2 mr-md-2">
-                                                        <div class="form-group">
-                                                            <div class="form-field">
-                                                                <div class="select-wrap">
-                                                                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                                    <select name="" id="" class="form-control">
-							                      	<option value="">Semester</option>
-							                      	<option value="">Sem - 1</option>
-							                        <option value="">Sem - 2</option>
-							                        <option value="">Sem - 3</option>
-							                        <option value="">Sem - 4</option>
-							                        <option value="">Sem - 5</option>
-							                        <option value="">Sem - 6</option>
-							                        <option value="">Sem - 7</option>
-							                        <option value="">Sem - 8</option>
-							                      </select>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
