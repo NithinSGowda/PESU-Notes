@@ -264,7 +264,7 @@
                              <div class="one-third mb-4 mb-md-0">
                                  <div class="job-post-item-header align-items-center">
                                      <span class="subadge"><?php echo $post["post_subject"];?></span>
-                                     <h2 class="mr-3 text-black"><a href="#"><?php echo $post["post_title"];?></a></h2>
+                                     <h2 class="mr-3 text-black"><a href="post.php?id="<?php echo $post["post_id"];?>><?php echo $post["post_title"];?></a></h2>
                                  </div>
                                  <div class="job-post-item-body d-block d-md-flex">
                                      <div class="mr-3"><span class="bx bx-download"></span><span class="number">  <?php echo $post["downloads"];?></span> <span> Downloads</span></div>
