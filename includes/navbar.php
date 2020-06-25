@@ -9,11 +9,12 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
             <?php if(isset($_SESSION['user_logged_in'])) {?>
-                <li class="nav-item"><a href="#" class="nav-link">Account</a></li>
+                <li class="nav-item"><a href="user/dashboard.php" class="nav-link">Account</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
             <?php }else{?>
                 <li class="nav-item"><a href="signIn.php" class="nav-link">Login</a></li>
             <?php }?>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Support</a></li>
             <li class="nav-item cta mr-md-1"><a href="upload.php" class="nav-link">Upload Notes</a></li>
         </ul>
     </div>
