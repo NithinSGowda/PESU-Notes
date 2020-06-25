@@ -48,8 +48,9 @@
       <li>Subject  : <?php echo $post[0]["post_subject"];?></li>
       <li>Uploaded : <?php echo $post[0]["created_at"];?></li>
     </ul>
-  </div>
-
+  
+	<button type="button" class="btn btn-outline-primary btn-lg btn-block"><b>View Online</b> <small>1 coin</small></button>
+  <button type="button" class="btn btn-success btn-lg btn-block"><b>Download</b> <small>10 coins</small></button></div>
 </div>
 <!-- /.row -->
 
