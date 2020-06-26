@@ -17,7 +17,7 @@
                 <li class="nav-item"><a href="user/dashboard.php" class="nav-link">Account</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
                 <li class="nav-item"><a href="buy.php" class="nav-link">
-                <span style="color : yellow;">
+                <span style="color : #e5c100;">
                 <?php 
                  $dbUser->where ('user_id', $_SESSION['user_id']);
                  $userId=$dbUser->getValue('auth_users','user_profile_id');

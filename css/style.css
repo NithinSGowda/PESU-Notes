@@ -10069,3 +10069,7 @@ textarea.form-control {
       border: 0;
       transition: all .2s ease;
     }
+
+.carousel-candidates h2{
+  color: #e5c100;
+}
