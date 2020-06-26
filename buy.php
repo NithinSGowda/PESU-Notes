@@ -4,12 +4,12 @@
     ini_set('display_startup_errors', 1); ini_set('display_errors', 1); error_reporting(-1);
     session_start();
     
-    $db = getDbInstance();
-    $db->where ('user_id', $_SESSION['user_id']);
-    $userId=$db->getValue('auth_users','user_profile_id');
-    $dbCoin = getDbInstance();
-    $dbCoin->where ('user_profile_id', $userId);
-    $row=$dbCoin->getValue('user_profiles','*');
+    $db3 = getDbInstance();
+    $db3->where ('user_id', $_SESSION['user_id']);
+    $userId=$db3->getValue('auth_users','user_profile_id');
+    $db2 = getDbInstance();
+    $db2->where ('user_profile_id', $userId);
+    $row=$db2->get('user_profiles');
 ?>
 <?php include 'includes/header.php'; ?>
   <body>
@@ -19,13 +19,16 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
           <div class="col-md-12 ftco-animate text-center mb-5">
-          	<p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span><?php echo $row["coins"];?></span></p>
+          	<p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>buy</span></p>
             <h1 class="mb-3 bread">Buy Coins</h1>
           </div>
         </div>
       </div>
     </div>
 
+        <div class="container text-center mt-2">
+            <h2>You have <?php echo $row[0]["coins"];?> coins</h2>
+        </div>
 
 
 
