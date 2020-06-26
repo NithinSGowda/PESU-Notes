@@ -8,6 +8,10 @@
     $posts=$db->getValue('posts','count(*)'); 
     $users=$db->getValue('posts','count(DISTINCT(created_by))'); 
     $downloads = $db->getValue('posts','sum(downloads)'); 
+    $dbUser->where ('user_id', $_SESSION['user_id']);
+    $userId=$dbUser->getValue('auth_users','user_profile_id');
+    $dbCoin->where ('user_profile_id', $userId);
+    $userFname=$dbCoin->getValue('user_profiles','full_name');
 ?>
 
 
@@ -23,7 +27,7 @@
                 <div class="col-md-10 d-flex align-items-center ftco-animate">
                     <div class="text text-center pt-5 mt-md-5">
                         <p class="mb-4">Find Notes, Assignments, and Projects</p>
-                        <h1 class="mb-5">The Easiest Way to Get Your Notes</h1>
+                        <h1 class="mb-5">The Easiest Way to Get Your Notes <?php echo $userFname; ?></h1>
                         <div class="ftco-counter ftco-no-pt ftco-no-pb">
                             <div class="row">
                                 <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">

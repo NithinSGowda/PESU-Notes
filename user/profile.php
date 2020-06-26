@@ -39,7 +39,7 @@
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="../index.php">
           PESU Notes
         </a>
       </div>
@@ -49,14 +49,14 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="dashboard.html">
+              <a class="nav-link" href="dashboard.php">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link active" href="profile.html">
+              <a class="nav-link active" href="profile.php">
                 <i class="ni ni-single-02 text-yellow"></i>
                 <span class="nav-link-text">Profile</span>
               </a>
@@ -119,7 +119,7 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Welcome! Fname</h6>
                 </div>
-                <a href="profile.html" class="dropdown-item">
+                <a href="profile.php" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>My profile</span>
                 </a>
