@@ -23,6 +23,7 @@
 			{
 				$_SESSION['user_logged_in'] = TRUE;
 				$_SESSION['user_id'] = $row['user_id'];
+				$_SESSION['user_profile_id'] = $row['user_profile_id'];
 				$_SESSION['user_srn'] = $row['user_srn'];
 				header('Location: /index.php');
 			}
