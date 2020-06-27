@@ -2,9 +2,10 @@
 <?php require_once '/var/www/pesu/libraries/config/config.php';?>
 <!-- GETTING USER DETAILS -->
 <?php
-  $user_id = 	$_SESSION['user_profile_id'];
+  $user_profile_id = 	$_SESSION['user_profile_id'];
+  $user_id = 	$_SESSION['user_id'];
   $db = getDbInstance();
-  $db->where('user_profile_id', $user_id);
+  $db->where('user_profile_id', $user_profile_id);
   $user = $db->getOne('user_profiles');
 
   // DETAILS
@@ -20,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     $stat = $db->update('user_profiles', $data_to_db);
     if ($stat)
     { 
+      $_SESSION['user_name']=$data_to_db['full_name'];
       $_SESSION['success'] = 'Profile updated successfully!';
       header('Location: profile.php');
       exit();
@@ -30,9 +32,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     }
   }
     ?>
+
+<style>
+.profile{
+  
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+}
+.profile .file-upload{
+  width:250px;
+  position:relative;
+  transition: all 1s;
+}
+.profile input[type='file']{
+position:absolute;
+width:250px;
+height:250px;
+top:0;
+z-index:500;
+left:0;
+opacity:0;
+cursor:pointer;
+}
+
+</style>
 <?php include 'includes/header.php';?>
 <body>
   <?php include 'includes/side-navbar.php';?>
+
 
   <div class="main-content" id="panel">
     <!-- Topnav -->
@@ -61,15 +90,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         <div class="col-xl-4 order-xl-2">
           <div class="card card-profile">
             <img src="assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+            <form id="change-profile-form" >
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
-                <div class="card-profile-image">
-                  <a href="#">
-                    <img src="assets/img/theme/team-4.jpg" class="rounded-circle">
-                  </a>
+                <div class="profile card-profile-image">
+                    <div class="file-upload">
+                        <input    name="file" id="fileInput"  type="file" />
+                        <img id="" src="uploads/profiles/<?php echo $_SESSION['profile_image']; ?>" class=" profile-picture large-profile-pic rounded-circle">
+                    </div>
                 </div>
               </div>
             </div>
+           </form>
             <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
               <div class="d-flex justify-content-between">
                 
@@ -107,7 +139,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
                 </div>
                 
               </div>
+             
             </div>
+            <div class="progress rounded-0 mb-0">
+                    <div class="progress-bar bg-success"></div>
+                </div>
           </div>
         </div>
         <div class="col-xl-8 order-xl-1">
@@ -231,8 +267,67 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
   <script src="assets/vendor/js-cookie/js.cookie.js"></script>
   <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
   <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <!-- Argon JS -->
   <script src="assets/js/argon.js?v=1.2.0"></script>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+   
+	
+    // File type validation
+    $("#fileInput").change(function(){
+        var allowedTypes = [ 'image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+        var file = this.files[0];
+        var fileType = file.type;
+        if(!allowedTypes.includes(fileType)){
+            alert('Please select a valid file (JPEG/JPG/PNG/GIF).');
+            $("#fileInput").val('');
+            return false;
+        };
+        // SUBMIT AJAX
+        $.ajax({
+            xhr: function() {
+                var xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = ((evt.loaded / evt.total) * 100);
+                        $(".progress-bar").width(percentComplete + '%');
+                    }
+                }, false);
+                return xhr;
+            },
+            type: 'POST',
+            url: '/user/helpers/update_profile_picture.php',
+            data: new FormData($('#change-profile-form')[0]),
+            contentType: false,
+            cache: false,
+            processData:false,
+            beforeSend: function(){
+                $(".progress-bar").width('0%');
+            },
+            error:function(){
+                alert("Failed!");
+
+           },
+            success: function(resp){
+                 if(resp == 'err'){
+                    alert("Failed!");
+                }else{
+                  $('#change-profile-form')[0].reset();
+                    $('.profile-picture').attr('src',resp);
+
+                }
+                $(".progress-bar").width('0%');
+
+
+            }
+        });
+
+    });
+});
+</script>
+</html>
+
 
 </html>

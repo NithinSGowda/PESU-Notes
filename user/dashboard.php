@@ -1,4 +1,21 @@
+<?php session_start(); ?>
 <?php include 'includes/header.php'; ?>
+
+<?php require_once '/var/www/pesu/libraries/config/config.php';?>
+<?php
+  $user_profile_id = 	$_SESSION['user_profile_id'];
+  $user_id = 	$_SESSION['user_id'];
+
+  // DETAILS
+  $db = getDbInstance();
+  $numNotes= $db->where('created_by', $user_id)->getValue('posts','count(*)');
+  $numNotesCurrentMonth= $db->where('created_by', $user_id)->where('MONTH(created_at)',date('m'))->getValue('posts','count(*)');
+  $numDownloads= $db->where('created_by', $user_id)->getValue('posts','SUM(downloads)');
+  $numDownloadsCurrentMonth= $db->where('created_by', $user_id)->where('MONTH(created_at)',date('m'))->getValue('posts','SUM(downloads)');
+
+?>
+
+
 
 <body>
   <?php include 'includes/side-navbar.php'; ?>
@@ -12,11 +29,16 @@
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Fname's dashboard</h6>
+              <h6 class="h2 text-white d-inline-block mb-0 text-uppercase"><?php echo $_SESSION['user_name']?>'s DASHBOARD</h6>
               
             </div>
             <div class="col-lg-6 col-5 text-right">
               <a href="#" class="btn btn-sm btn-neutral">Refresh</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+            <?php include    '/var/www/pesu/includes/flash_messages.php'; ?>
             </div>
           </div>
           <!-- Card stats -->
@@ -50,7 +72,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Total downloads</h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
+                      <span class="h2 font-weight-bold mb-0"><?php echo $numDownloads ?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -59,7 +81,7 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 253</span>
+                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> <?php echo $numDownloadsCurrentMonth ?></span>
                     <span class="text-nowrap">Since last month</span>
                   </p>
                 </div>
@@ -72,7 +94,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Total notes </h5>
-                      <span class="h2 font-weight-bold mb-0">92</span>
+                      <span class="h2 font-weight-bold mb-0"><?php echo $numNotes;?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -81,7 +103,7 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 9</span>
+                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> <?php echo $numNotesCurrentMonth ?></span>
                     <span class="text-nowrap">Since last month</span>
                   </p>
                 </div>
@@ -122,11 +144,11 @@
               <div class="row align-items-center">
                 <div class="col">
                   <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
-                  <h5 class="h3 text-white mb-0">Downloads</h5>
+                  <h5 class="h3 text-white mb-0">NOTES</h5>
                 </div>
                 <div class="col">
                   <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="k">
+                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[500, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="k">
                       
                     </li>
                   </ul>
@@ -163,100 +185,7 @@
       </div>
       <div class="row">
         <div class="col-xl-8">
-          <div class="card">
-            <div class="card-header border-0">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h3 class="mb-0">Notes</h3>
-                </div>
-              </div>
-            </div>
-            <div class="table-responsive">
-              <!-- Projects table -->
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Notes name</th>
-                    <th scope="col">Visitors</th>
-                    <th scope="col">Downloads</th>
-                    <th scope="col">Bounce rate</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      File 1
-                    </th>
-                    <td>
-                      4,569
-                    </td>
-                    <td>
-                      340
-                    </td>
-                    <td>
-                      <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      File 3
-                    </th>
-                    <td>
-                      3,985
-                    </td>
-                    <td>
-                      319
-                    </td>
-                    <td>
-                      <i class="fas fa-arrow-down text-warning mr-3"></i> 46,53%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      File 2
-                    </th>
-                    <td>
-                      3,513
-                    </td>
-                    <td>
-                      294
-                    </td>
-                    <td>
-                      <i class="fas fa-arrow-down text-warning mr-3"></i> 36,49%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      File 4
-                    </th>
-                    <td>
-                      2,050
-                    </td>
-                    <td>
-                      147
-                    </td>
-                    <td>
-                      <i class="fas fa-arrow-up text-success mr-3"></i> 50,87%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      File 5
-                    </th>
-                    <td>
-                      1,795
-                    </td>
-                    <td>
-                      190
-                    </td>
-                    <td>
-                      <i class="fas fa-arrow-down text-danger mr-3"></i> 46,53%
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+         <?php include 'helpers/panel-items/notes/get_recent_notes.php'?>
         </div>
         <div class="col-xl-4">
           <div class="card">
