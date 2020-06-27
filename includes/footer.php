@@ -54,7 +54,7 @@
                         Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved | Developed by <a href="https://nith.ml/insta" target="_blank">Nithin S Gowda</a>
+                        </script> All rights reserved | Developed by team <a href="https://nith.ml/insta" target="_blank">PESU Notes</a>
                     </p>
                 </div>
             </div>

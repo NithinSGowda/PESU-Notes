@@ -4,7 +4,8 @@
     $PATH = '/var/www/pesu';
     require_once $PATH.'/libraries/config/config.php';
     ini_set('display_startup_errors', 1); ini_set('display_errors', 1); error_reporting(-1);
-
+    session_start();
+    
     $db = getDbInstance();
     $db->join("auth_users u", "p.created_by=u.user_id", "LEFT");
     $db->where ('post_id', $_GET["id"]);

@@ -22,8 +22,19 @@
             <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-10 d-flex align-items-center ftco-animate">
                     <div class="text text-center pt-5 mt-md-5">
+                    <?php if(isset($_SESSION['user_logged_in'])) {?>
+                        <h4><p class="mb-4">Welcome <?php 
+                        $db->where ('user_id', $_SESSION['user_id']);
+                        $userId=$db->getValue('auth_users','user_profile_id');
+                        $dbCoin = getDbInstance();
+                        $dbCoin->where ('user_profile_id', $userId);
+                        $userFname=$dbCoin->getValue('user_profiles','full_name');
+                        echo $userFname; 
+                        ?></p></h4>
+                    <?php }else{?>
                         <p class="mb-4">Find Notes, Assignments, and Projects</p>
-                        <h1 class="mb-5">The Easiest Way to Get Your Notes</h1>
+                    <?php }?>
+                        <h1 class="mb-5">The Easiest Way to Get Your Notes </h1>
                         <div class="ftco-counter ftco-no-pt ftco-no-pb">
                             <div class="row">
                                 <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
@@ -182,7 +193,7 @@
             <div class="row justify-content-center pb-3">
                 <div class="col-md-10 heading-section heading-section-white text-center ftco-animate">
                     <span class="subheading">Content Creators</span>
-                    <h2 class="mb-4">Top Contributors</h2>
+                    <h2 class="mb-4"  style="color : #e5c100;">Top Contributors</h2>
                 </div>
             </div>
         </div>
