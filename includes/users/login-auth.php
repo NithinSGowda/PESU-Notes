@@ -23,7 +23,15 @@
 			{
 				$_SESSION['user_logged_in'] = TRUE;
 				$_SESSION['user_id'] = $row['user_id'];
+				$_SESSION['user_profile_id'] = $row['user_profile_id'];
 				$_SESSION['user_srn'] = $row['user_srn'];
+				$user= $db->where('user_profile_id', $row['user_profile_id'])->getOne('user_profiles');
+				$_SESSION['profile_image'] ='default.jpg';
+				if($user['profile_image']){
+					$_SESSION['profile_image'] =$user['profile_image'];
+				}
+					
+				$_SESSION['user_name'] =$user['full_name'];
 				header('Location: /index.php');
 			}
 			else
