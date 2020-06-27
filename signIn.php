@@ -1,4 +1,5 @@
-<?php include 'includes/header.php'; ?>
+<?php     session_start();
+ include 'includes/header.php'; ?>
 
 <body>
     <?php include 'includes/navbar.php'; ?>
@@ -166,7 +167,7 @@
                                     <div class="text-center">
                                         <a class="small" href="#">Why am i seeing this?</a></div>
                                     <div class="text-center">
-                                        Not yet registered? <a class="small" href="#">Register here</a></div>
+                                        Not yet registered? <a class="small" href="register-user.php">Register here</a></div>
                                 </form>
                             </div>
                         </div>
