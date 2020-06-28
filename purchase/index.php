@@ -1,6 +1,6 @@
 <?php
 require('config.php');
-require('Razorpay.php');
+require('razorpay-php/Razorpay.php');
 session_start();
 
 // Create the Razorpay Order
