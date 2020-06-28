@@ -33,7 +33,7 @@
               
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">Refresh</a>
+              <a href="dashboard.php" class="btn btn-sm btn-neutral">Refresh</a>
             </div>
           </div>
           <div class="row">

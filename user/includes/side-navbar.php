@@ -2,7 +2,7 @@
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
-             <a class="navbar-brand" href="index.php">PESU Notes</a>
+             <a class="navbar-brand" href="/index.php">PESU Notes</a>
       </div>
       <div class="navbar-inner">
         <!-- Collapse -->
@@ -10,7 +10,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="dashboard.php">
+              <a class="nav-link" href="dashboard.php">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>

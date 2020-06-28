@@ -14,9 +14,9 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <?php if(isset($_SESSION['user_logged_in'])) {?>
-                <li class="nav-item"><a href="user/dashboard.php" class="nav-link">Account</a></li>
+                <li class="nav-item"><a href="/user/dashboard.php" class="nav-link">Account</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
-                <li class="nav-item"><a href="purchase/index.php" class="nav-link">
+                <li class="nav-item"><a href="/purchase/index.php" class="nav-link">
                 <span style="color : #e5c100;">
                 <?php 
                  $dbUser->where ('user_id', $_SESSION['user_id']);
@@ -27,9 +27,9 @@
                  echo $coins;
                 ?> <small> coins</small> </span></a></li>
             <?php }else{?>
-                <li class="nav-item"><a href="signIn.php" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="/signIn.php" class="nav-link">Login</a></li>
             <?php }?>
-            <li class="nav-item cta mr-md-1"><a href="upload.php" class="nav-link">Upload Notes</a></li>
+            <li class="nav-item cta mr-md-1"><a href="/upload.php" class="nav-link">Upload Notes</a></li>
         </ul>
     </div>
 </div>
