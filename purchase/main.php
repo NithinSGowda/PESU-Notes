@@ -45,11 +45,11 @@
 					<span class="label-input100">Username </span>
 					<input class="input100 username" type="text" name="id" value="<?php echo $username;?>" disabled>
 				</div>
-				<input class="range" type="range" value="0" min="10" max="2000">
+				<input class="range" type="range" value="0" min="100" max="2000">
 
 				<div class="wrap-input100 validate-input bg1">
 					<span class="label-input100">Coins </span>
-					<input class="input100 coins" type="number" name="id" value="10" min="0" max="2000">
+					<input class="input100 coins" type="number" name="id" value="100" min="0" max="2000">
 				</div>
 
 				<!-- <div class="container-contact100-form-btn">
@@ -93,15 +93,15 @@
 	var coins = document.querySelector('.coins');
 	// var btn = document.querySelector('.buy');
 	ranger.addEventListener("change",()=>{
-        if(ranger.value < 10){
-            ranger.value = 10
+        if(ranger.value < 100){
+            ranger.value = 100
         }
 		coins.value = ranger.value
         // btn.innerHTML = "Buy now @ &#8377;" + Math.round(ranger.value/10);
 	})
 	coins.addEventListener("change",()=>{
-        if(coins.value < 10){
-            coins.value = 10
+        if(coins.value < 100){
+            coins.value = 100
         }
 		ranger.value = coins.value
         // btn.innerHTML = "Buy now @ &#8377;" + Math.round(ranger.value/10);
