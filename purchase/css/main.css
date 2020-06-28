@@ -277,7 +277,7 @@ textarea.input100 {
 
 /*------------------------------------------------------------------
 [ Button ]*/
-.container-contact100-form-btn {
+.container-contact100-form-btn , .razorpay_payment_button{
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -289,7 +289,7 @@ textarea.input100 {
   width: 100%;
 }
 
-.contact100-form-btn {
+.contact100-form-btn , .razorpay_payment_button{
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -321,7 +321,7 @@ textarea.input100 {
   transition: all 0.4s;
 }
 
-.contact100-form-btn:hover {
+.contact100-form-btn:hover  , .razorpay_payment_button:hover {
   background-color: #00ad5f;
 }
 

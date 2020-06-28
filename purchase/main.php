@@ -52,14 +52,14 @@
 					<input class="input100 coins" type="number" name="id" value="10" min="0" max="2000">
 				</div>
 
-				<div class="container-contact100-form-btn">
+				<!-- <div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">
 						<span class="buy">
 							Buy now
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>
-				</div>
+				</div> -->
 
 				
 				<script
@@ -67,10 +67,13 @@
 					data-key="<?php echo $data['key']?>"
 					data-amount="<?php echo $data['amount']?>"
 					data-currency="INR"
+					data-buttontext="Pay with Razorpay"
 					data-name="<?php echo $data['name']?>"
 					data-image="<?php echo $data['image']?>"
 					data-description="<?php echo $data['description']?>"
 					data-prefill.name="<?php echo $username?>"
+					data-prefill.email="<?php echo $username?>"
+					data-theme.hide_topbar="true"
 					data-notes.shopping_order_id="3456"
 					data-order_id="<?php echo $data['order_id']?>"
 					<?php if ($displayCurrency !== 'INR') { ?> data-display_amount="<?php echo $data['display_amount']?>" <?php } ?>
@@ -88,20 +91,20 @@
 <script>
 	var ranger = document.querySelector('.range');
 	var coins = document.querySelector('.coins');
-	var btn = document.querySelector('.buy');
+	// var btn = document.querySelector('.buy');
 	ranger.addEventListener("change",()=>{
         if(ranger.value < 10){
             ranger.value = 10
         }
 		coins.value = ranger.value
-        btn.innerHTML = "Buy now @ &#8377;" + Math.round(ranger.value/10);
+        // btn.innerHTML = "Buy now @ &#8377;" + Math.round(ranger.value/10);
 	})
 	coins.addEventListener("change",()=>{
         if(coins.value < 10){
             coins.value = 10
         }
 		ranger.value = coins.value
-        btn.innerHTML = "Buy now @ &#8377;" + Math.round(ranger.value/10);
+        // btn.innerHTML = "Buy now @ &#8377;" + Math.round(ranger.value/10);
 	})
 </script>
 <?php include '../includes/scripts.php'; ?>
