@@ -12,7 +12,7 @@
 
     <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/index.php" class="nav-link">Home</a></li>
             <?php if(isset($_SESSION['user_logged_in'])) {?>
                 <li class="nav-item"><a href="/user/dashboard.php" class="nav-link">Account</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>

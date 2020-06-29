@@ -121,18 +121,18 @@
     <div class="highlight-clean">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center" style="margin: 7px;font-size: 45px;"><?php echo $state;?></h2>
-                <p class="text-monospace text-center">Reference ID : <?php echo $_SESSION['razorpay_order_id'];?></p>
-                <p class="text-monospace text-center">User : <?php echo $username;?></p>
-                <p class="text-monospace text-center">Transaction date : <?php echo date("Y-m-d h:i:sa");?></p>
-                <p class="lead text-center text-success border rounded-0 border-success" style="padding: 24px;">Updated Balance : <?php echo $amount + $coins; ?> coins</p>
+                <h2 class="text-center" style="margin: 7px;margin-bottom: 20px; font-size: 45px;"><?php echo $state;?></h2>
+                <p class="text-monospace text-center m-3">Reference ID : <?php echo $_SESSION['razorpay_order_id'];?></p>
+                <p class="text-monospace text-center m-3">User : <?php echo $username;?></p>
+                <p class="text-monospace text-center m-3">Transaction date : <?php echo date("Y-m-d h:i:sa");?></p>
+                <p class="lead text-center text-success border rounded-0 border-success m-4" style="padding: 24px;">Updated Balance : <?php echo $amount + $coins; ?> coins</p>
             </div>
-            <p class="text-monospace text-center"><?php echo $message;?></p>
+            <p class="text-monospace text-center mb-7"><?php echo $message;?></p>
             <div class="buttons"><a class="btn btn-primary" role="button" href="/index.php">Home</a><button class="btn btn-light" data-bs-hover-animate="tada" type="button" href="/purchase">Buy more</button></div>
         </div>
         <p class="text-monospace text-center" style="margin: 45px;font-size: 16px;">*For any queries contact pesunote@gmail.com</p>
     </div>
-
+<hr>
 <?php include '../includes/footer.php'; ?>
 </body>
 <?php include '../includes/scripts.php'; ?>
