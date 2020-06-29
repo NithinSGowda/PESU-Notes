@@ -125,7 +125,7 @@
                 <p class="text-monospace text-center m-3">Reference ID : <?php echo $_SESSION['razorpay_order_id'];?></p>
                 <p class="text-monospace text-center m-3">User : <?php echo $username;?></p>
                 <p class="text-monospace text-center m-3">Transaction date : <?php echo date("Y-m-d h:i:sa");?></p>
-                <p class="lead text-center text-success border rounded-0 border-success m-4" style="padding: 24px;">Updated Balance : <?php echo $amount + $coins; ?> coins</p>
+                <p class="lead text-center text-success border rounded-0 border-success m-4" style="padding: 24px;">Updated Balance : <?php echo $coins; ?> coins</p>
             </div>
             <p class="text-monospace text-center mb-7"><?php echo $message;?></p>
             <div class="buttons"><a class="btn btn-primary" role="button" href="/index.php">Home</a><button class="btn btn-light" data-bs-hover-animate="tada" type="button" href="/purchase">Buy more</button></div>

@@ -4,6 +4,9 @@
 
     require_once $PATH.'/libraries/config/config.php';
 	session_start();
+	if(!isset($_SESSION['user_logged_in'])){
+		header("Location: signIn.php");
+	  }
 	$db = getDbInstance();
 	$db->where ('user_id', $_SESSION['user_id']);
     $userId=$db->getValue('auth_users','user_profile_id');
