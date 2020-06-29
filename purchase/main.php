@@ -51,15 +51,11 @@
 					<span class="label-input100">Coins </span>
 					<input class="input100 coins" type="number" name="id" value="100" min="0" max="2000">
 				</div>
-
-				<!-- <div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
-						<span class="buy">
-							Buy now
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-						</span>
-					</button>
-				</div> -->
+				<div class="wrap-input100 validate-input bg1">
+					<span class="label-input100">You are about to pay </span>
+					<input class="input100 money" type="text" name="id" value="&#8377 0" disabled>
+				</div>
+				
 
 				
 				<script
@@ -91,20 +87,20 @@
 <script>
 	var ranger = document.querySelector('.range');
 	var coins = document.querySelector('.coins');
-	// var btn = document.querySelector('.buy');
+	var money = document.querySelector('.money');
 	ranger.addEventListener("change",()=>{
         if(ranger.value < 100){
             ranger.value = 100
         }
 		coins.value = ranger.value
-        // btn.innerHTML = "Buy now @ &#8377;" + Math.round(ranger.value/10);
+        money.value = "&#8377;" + Math.round(ranger.value/10);
 	})
 	coins.addEventListener("change",()=>{
         if(coins.value < 100){
             coins.value = 100
         }
 		ranger.value = coins.value
-        // btn.innerHTML = "Buy now @ &#8377;" + Math.round(ranger.value/10);
+        money.value = "&#8377;" + Math.round(ranger.value/10);
 	})
 </script>
 <?php include '../includes/scripts.php'; ?>
