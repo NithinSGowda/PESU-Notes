@@ -72,5 +72,15 @@ if ($displayCurrency !== 'INR')
 
 $json = json_encode($data);
 
-require("main.php");
+$PATH = '/var/www/pesu';
+require_once $PATH.'/libraries/config/config.php';
+
+$dbpay = getDbInstance();
+
+$dbdata = Array ("razorpay_order_id" => $razorpayOrderId,
+               "amount" => $amount/100
+);
+$id = $dbpay->insert ('payments', $dbdata);
+if($id)
+    require("main.php");
 ?>

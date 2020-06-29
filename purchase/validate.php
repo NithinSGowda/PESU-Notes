@@ -1,4 +1,13 @@
 <?php
+    ini_set('display_startup_errors', 1); ini_set('display_errors', 1); error_reporting(-1);
+    $PATH = '/var/www/pesu';
+    require_once $PATH.'/libraries/config/config.php';
+    
+    $dbpay = getDbInstance();
+    $dbpay2 = getDbInstance();
+    $dbpay3 = getDbInstance();
+    
+    
     require('config.php');
     require('razorpay-php/Razorpay.php');
     $amount = $_POST["coins"];
@@ -39,9 +48,34 @@
 
     if ($success === true)
     {
+        $dbpay->where ('razorpay_order_id', $_SESSION['razorpay_order_id']);
+        $amountInDB=$dbpay->getValue('payments','amount');
+        $dbpay->where ('razorpay_order_id', $_SESSION['razorpay_order_id']);
+        $paymentStatus=$dbpay->getValue('payments','state');    
+        $dbpay3->where ('razorpay_order_id', $_SESSION['razorpay_order_id']);
+        $dbpay2->where ('user_profile_id',$_POST["id"]);
+        echo $amountInDB."<br>";
+        echo $paymentStatus."<br>";
+        if($amountInDB == $_POST["coins"] && $paymentStatus == 0){
+            $DBdata = Array (
+                'state' => 1
+            );
+            $balanceUpdate = Array (
+                'coins' => $dbpay2->inc($amountInDB)
+            );
+            if ($dbpay3->update ('payments', $DBdata) && $dbpay2->update ('user_profiles',$balanceUpdate))
+                echo 'DB update Successful';
+            else
+                echo 'payment update failed: ' . $db->getLastError();
+            
+        }else{
+            echo "Your payment has been declined by PESU Notes due to suspicious activity";
+            die();
+        }
+
         $html = "<p>Your payment was successful</p>
                 <p>Payment ID: {$_POST['razorpay_payment_id']}</p>
-                <p>Amount : ".$_POST["amount"]."<p>
+                <p>Amount : ".$_POST["coins"]."<p>
                 <p>User : ".$_POST["id"]."<p>";
     }
     else
