@@ -3,7 +3,6 @@
     $PATH = '/var/www/pesu';
 
     require_once $PATH.'/libraries/config/config.php';
-	session_start();
 	$db = getDbInstance();
 	$db->where ('user_id', $_SESSION['user_id']);
     $userId=$db->getValue('auth_users','user_profile_id');
@@ -58,7 +57,7 @@
 					data-name="<?php echo $data['name']?>"
 					data-image="<?php echo $data['image']?>"
 					data-description="<?php echo $data['description']?>"
-					data-prefill.name="<?php echo $phone?>"
+					data-prefill.phone="<?php echo $phone?>"
 					data-prefill.email="<?php echo explode(' ',trim($username))[0]."@pesunotes.com"?>"
 					data-theme.hide_topbar="true"
 					data-notes.shopping_order_id="<?php echo $data['order_id']?>"
