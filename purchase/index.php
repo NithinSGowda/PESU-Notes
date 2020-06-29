@@ -43,11 +43,11 @@
 				<span class="h5">Purchasing as :</span><br><br>
 				<div class="wrap-input100 validate-input bg1">
 					<span class="label-input100">Username </span>
-					<input class="input100 username" type="text" name="name" value="<?php echo $username;?>" disabled>
+					<input class="input100 username" type="text" name="name" value="<?php echo $username;?>" readonly="readonly">
                 </div>
                 <div class="wrap-input100 validate-input bg1" hidden>
 					<span class="label-input100">UserID </span>
-					<input class="input100 username" type="text" name="id" value="<?php echo $userId;?>" disabled>
+					<input class="input100 username" type="text" name="id" value="<?php echo $userId;?>" readonly="readonly">
 				</div>
 				<input class="range" type="range" value="0" min="100" max="2000">
 

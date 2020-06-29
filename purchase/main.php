@@ -40,7 +40,7 @@
 				
 				<div class="wrap-input100 validate-input bg1">
 					<span class="label-input100">You are about to pay </span>
-					<input class="input100 money" type="text" name="id" value="&#8377 <?php echo $data['amount'];?>" disabled>
+					<input class="input100 money" type="text" name="id" value="&#8377 <?php echo $data['amount']/100;?>" disabled>
 				</div>
 				
 
