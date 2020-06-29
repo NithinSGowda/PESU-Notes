@@ -11,6 +11,7 @@
     $dbCoin->where ('user_profile_id', $userId);
     $coins=$dbCoin->getValue('user_profiles','coins');
     $username=$dbCoin->getValue('user_profiles','full_name');
+    $phone=$dbCoin->getValue('user_profiles','phone');
 ?>
 <?php include '../includes/header.php'; ?>
 <head>
@@ -36,11 +37,14 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="nith.ml" method="POST">
-				
+			<form class="contact100-form validate-form" action="validate.php" method="POST">
+			<div class="wrap-input100 validate-input bg1">
+					<span class="label-input100">UserID </span>
+					<input class="input100 money" type="text" name="id" value="&#8377 <?php echo $userId;?>" hidden>
+				</div>
 				<div class="wrap-input100 validate-input bg1">
 					<span class="label-input100">You are about to pay </span>
-					<input class="input100 money" type="text" name="id" value="&#8377 <?php echo $data['amount']/100;?>" disabled>
+					<input class="input100 money" type="text" name="coins" value="&#8377 <?php echo $data['amount']/100;?>" readonly="readonly">
 				</div>
 				
 
@@ -54,8 +58,8 @@
 					data-name="<?php echo $data['name']?>"
 					data-image="<?php echo $data['image']?>"
 					data-description="<?php echo $data['description']?>"
-					data-prefill.name="<?php echo $username?>"
-					data-prefill.email="<?php echo $username?>"
+					data-prefill.name="<?php if($phone!='NULL'){echo $phone;}else{echo ' '}?>"
+					data-prefill.email="<?php echo explode(' ',trim($username))[0]."@pesunotes.com"?>"
 					data-theme.hide_topbar="true"
 					data-notes.shopping_order_id="<?php echo $data['order_id']?>"
 					data-order_id="<?php echo $data['order_id']?>"
