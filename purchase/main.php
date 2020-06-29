@@ -27,7 +27,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-start">
           <div class="col-md-12 ftco-animate text-center mb-5">
           	<p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>purchase</span></p>
-            <h1 class="mb-3 bread">Purchase coins</h1>
+            <h1 class="mb-3 bread">Checkout</h1>
           </div>
         </div>
       </div>
@@ -37,23 +37,10 @@
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" action="nith.ml" method="POST">
-				<span class="contact100-form-title">
-					You have <?php echo $coins;?> coins
-				</span>
-				<span class="h5">Purchasing as :</span><br><br>
-				<div class="wrap-input100 validate-input bg1">
-					<span class="label-input100">Username </span>
-					<input class="input100 username" type="text" name="id" value="<?php echo $username;?>" disabled>
-				</div>
-				<input class="range" type="range" value="0" min="100" max="2000">
-
-				<div class="wrap-input100 validate-input bg1">
-					<span class="label-input100">Coins </span>
-					<input class="input100 coins" type="number" name="id" value="100" min="0" max="2000">
-				</div>
+				
 				<div class="wrap-input100 validate-input bg1">
 					<span class="label-input100">You are about to pay </span>
-					<input class="input100 money" type="text" name="id" value="&#8377 0" disabled>
+					<input class="input100 money" type="text" name="id" value="&#8377 <?php echo $data['amount'];?>" disabled>
 				</div>
 				
 
@@ -70,13 +57,13 @@
 					data-prefill.name="<?php echo $username?>"
 					data-prefill.email="<?php echo $username?>"
 					data-theme.hide_topbar="true"
-					data-notes.shopping_order_id="3456"
+					data-notes.shopping_order_id="<?php echo $data['order_id']?>"
 					data-order_id="<?php echo $data['order_id']?>"
 					<?php if ($displayCurrency !== 'INR') { ?> data-display_amount="<?php echo $data['display_amount']?>" <?php } ?>
 					<?php if ($displayCurrency !== 'INR') { ?> data-display_currency="<?php echo $data['display_currency']?>" <?php } ?>
 				>
 				</script>
-				<input type="hidden" name="shopping_order_id" value="3456">
+				<input type="hidden" name="shopping_order_id" value="<?php echo $data['order_id']?>">
 
 			</form>
 		</div>
@@ -84,23 +71,4 @@
 
 <?php include '../includes/footer.php'; ?>
 </body>
-<script>
-	var ranger = document.querySelector('.range');
-	var coins = document.querySelector('.coins');
-	var money = document.querySelector('.money');
-	ranger.addEventListener("change",()=>{
-        if(ranger.value < 100){
-            ranger.value = 100
-        }
-		coins.value = ranger.value
-        money.value = "&#8377;" + Math.round(ranger.value/10);
-	})
-	coins.addEventListener("change",()=>{
-        if(coins.value < 100){
-            coins.value = 100
-        }
-		ranger.value = coins.value
-        money.value = "&#8377;" + Math.round(ranger.value/10);
-	})
-</script>
 <?php include '../includes/scripts.php'; ?>
