@@ -8,7 +8,7 @@
 }
 </style>
 <body>
-  <?php include 'includes/side-navbar.php'; ?>
+  <?php include 'includes/side-navbarCategories.php'; ?>
 
   <div class="main-content" id="panel">
     <?php include 'includes/top-navbar.php'; ?>
