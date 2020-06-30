@@ -31,7 +31,29 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                      <div class="row d-flex justify-content-center">
-                     <div class="col-md-3 col-4 rounded"><img src="/images/person_1.jpg"  class="w-100" alt="">   </div>
+
+
+                     <!-- Card-Single -->
+                     <a href="/post.php?id={insert id here}">
+                     <div class="col-md-3 col-4 rounded">
+                     <img src="/images/person_1.jpg"  class="w-100" alt="">
+                     
+                     <!-- Text-template start -->
+                     <div class="card-header  border-0">
+                        <div class="row align-items-center">
+                            <div class="col strech">
+                                <h3 class="mb-0">File Title</h3><h2 class="text-muted"> - Author</h2><br>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, iusto!</p>
+                                <p>145 downloads</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Text-template end -->
+
+                    </div>
+                    </a>
+                    <!-- card-single-end -->
+
 
                     <div class="col-md-3 col-4 rounded"><img src="/images/person_1.jpg"  class="w-100" alt="">   </div>
                     <div class="col-md-3 col-4 rounded"><img src="/images/person_1.jpg"  class="w-100" alt="">   </div>
