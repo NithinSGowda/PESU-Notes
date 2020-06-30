@@ -8,19 +8,22 @@
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
-          <div class="container text-center">
-            <h2>About me</h2>
+        <hr>
+          <div class="container text-left">
+          <div class="p-3 mb-3">
+            <h2  class="text-center">About me</h2>
+          <br>
             <p>Name : Nithin</p>
             <p>Semester :4</p>
             <p>Class : D</p>
             <p>Campus : PESU ECC</p>
-            <br>
-            <h1>Basic Subscription</h1>
+          <hr>
+          <p>Subscription : Pro</p>
             <p>Valid till : 28/09/2020</p>
             <p>Coin Balance : 2020</p>
-            <br>
           </div>
-          
+          </div>
+          <hr>
         </div>
       </div>
     </div>

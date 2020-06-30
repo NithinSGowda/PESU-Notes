@@ -34,9 +34,10 @@
 
 
                      <!-- Card-Single -->
-                     <a href="/post.php?id={insert id here}">
                      <div class="col-md-3 col-4 rounded">
+                     <a href="/post.php?id={insert id here}">
                      <img src="/images/person_1.jpg"  class="w-100" alt="">
+                    </a>
                      
                      <!-- Text-template start -->
                      <div class="card-header  border-0">
@@ -51,7 +52,6 @@
                      <!-- Text-template end -->
 
                     </div>
-                    </a>
                     <!-- card-single-end -->
 
 
