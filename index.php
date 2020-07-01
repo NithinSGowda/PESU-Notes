@@ -285,7 +285,10 @@
                                  </div>
                              </div>
                              <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                 <a href="<?php echo $post["file_url"];?>" class="btn btn-primary py-2">Download</a>
+                                <form method="post" action="download.php">
+                                    <input type="text" hidden value="<?php echo encrypt($post["post_id"])?>" name="mcrypt_encrypt">
+                                    <button class="btn btn-primary py-2 download-file">Download</button>
+                                </form>
                              </div>
                          </div>
                      </div>
@@ -403,7 +406,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="/js/google-map.js"></script>
     <script src="/js/main.js"></script>
-
+    
 </body>
 
 </html>
