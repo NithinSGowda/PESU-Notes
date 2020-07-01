@@ -119,3 +119,27 @@ function paginationLinks($current_page, $total_pages, $base_url) {
 
 	return $html;
 }
+
+function encrypt($simple_string)
+{
+	$ciphering = "AES-128-CTR"; 
+	$iv_length = openssl_cipher_iv_length($ciphering); 
+	$options = 0; 
+	$encryption_iv = '1234567891011121'; 
+	$encryption_key = "GeeksforGeeks"; 
+	return openssl_encrypt($simple_string, $ciphering, 
+				$encryption_key, $options, $encryption_iv);
+}
+
+
+function decrypt($encryption)
+{
+	$ciphering = "AES-128-CTR"; 
+	$decryption_iv = '1234567891011121'; 
+	$decryption_key = "GeeksforGeeks"; 
+	return openssl_decrypt ($encryption, $ciphering, 
+			$decryption_key, 0, $decryption_iv); 
+	
+	
+}
+
