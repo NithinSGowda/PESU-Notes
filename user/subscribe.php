@@ -31,6 +31,25 @@ font-weight: 600;
 letter-spacing: 2px;
 text-transform: uppercase;
 }
+.subheading-yellow{
+    font-size: 16px;
+display: block;
+margin-bottom: 0px;
+color: #beff00;
+font-weight: 600;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+.subheading-purple{
+    font-size: 16px;
+display: block;
+margin-bottom: 0px;
+color: #bc65e0;
+font-weight: 600;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
 .subscription .icon i{
     font-size:8rem;
     background: -webkit-linear-gradient(0deg, #62bdfc 0%, #8490ff 100%);
@@ -45,6 +64,19 @@ text-transform: uppercase;
         }
 }
 
+.hot-tag {
+    position:absolute;
+    left:0;
+    top:0;
+    color:#fff;
+    width:30%;
+    padding:15px;
+    background:linear-gradient(87deg, #2dce89 0, #2dcecc 100%) !important;
+}
+.btn-bg-gradient-purple{
+    background:linear-gradient(87deg, #8965e0 0, #bc65e0 100%) !important;
+    color:#fff;
+}
 </style>
                            
                       
@@ -53,7 +85,7 @@ text-transform: uppercase;
     <div class="container-fluid mx-0 mt-4">
       <div class="row ">
          
-            <div class="col-md-7 ">
+            <div class="col-md-9 ">
                 <nav aria-label="breadcrumb mb-2">
                     <ol class="breadcrumb bg-white p-3">
                     <li class="breadcrumb-item ">Home</li>
@@ -66,53 +98,68 @@ text-transform: uppercase;
                 <div class="row ">
                    <div class="col-12">
                       <div class="container-full-width">
+                        <p class="pl-1 py-2">Choose a subscription</p>
                         <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="card rounded-lg shadow text-center card-body">
-                                <div class="icon mt-5 mx-auto p-5 my-3 icon-shape bg-gradient-blue text-white rounded-circle shadow">
+                                <div class="icon mt-5 mx-auto p-5 my-3 icon-shape bg-gradient-yellow text-white rounded-circle shadow">
                                 <i style="font-size:3rem;" class='bx bx-diamond'></i>
                             </div>
-                            <p class="subheading-blue my-2">Basic</p>
+                            <p class="subheading-yellow my-2">Bronze</p>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Morbi leo risus</li>
-                                <li class="list-group-item">Porta ac consectetur ac</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item"><span class="badge badge-warning p-2">60 Star Coins </span></li>
+                                <li class="list-group-item">Price ₹49</li>
+                                <li class="list-group-item"> Prime Content</li>
+                                <li class="list-group-item">30 Days Validity</li>
                             </ul>
-                            <a href="#" class="btn bg-gradient-blue w-100 text-center text-white">Pay ₹45</a>
+                            <a href="#" class="btn bg-gradient-yellow w-100 text-center text-white">Pay ₹49</a>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
+                            
                             <div class="card rounded-lg shadow text-center card-body">
+                            <div class="hot-tag  "><span>HOT!</span></div>
                                 <div class="icon mt-5 mx-auto p-5 my-3 icon-shape bg-gradient-green text-white rounded-circle shadow">
                                 <i style="font-size:3rem;" class='bx bx-diamond'></i>
                             </div>
-                            <p class="subheading-green my-2">Pro</p>
+                            <p class="subheading-green my-2">Silver</p>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Morbi leo risus</li>
-                                <li class="list-group-item">Porta ac consectetur ac</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item"><span class="badge badge-success p-2">120 Star Coins </span></li>
+                                <li class="list-group-item">Price ₹99</li>
+                                <li class="list-group-item"> Prime Content</li>
+                                <li class="list-group-item">30 Days Validity</li>
                             </ul>
-                            <a href="#" class="btn bg-gradient-green w-100 text-center text-white">Pay ₹45</a>
+                            <a href="#" class="btn bg-gradient-green w-100 text-center text-white">Pay ₹99 </a>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="card rounded-lg shadow text-center card-body">
                                 <div class="icon mt-5 mx-auto p-5 my-3 icon-shape bg-gradient-red text-white rounded-circle shadow">
                                 <i style="font-size:3rem;" class='bx bx-diamond'></i>
                             </div>
-                            <p class="subheading-red my-2 ">Enterprise</p>
+                            <p class="subheading-red my-2 ">Gold</p>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Morbi leo risus</li>
-                                <li class="list-group-item">Porta ac consectetur ac</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item"><span class="badge badge-danger p-2">200 Star Coins </span></li>
+                                <li class="list-group-item">Price ₹149</li>
+                                <li class="list-group-item"> Premium Content</li>
+                                <li class="list-group-item">45 Days Validity</li>
                             </ul>
-                            <a href="#" class="btn bg-gradient-red w-100 text-center text-white">Pay ₹45</a>
+                            <a href="#" class="btn bg-gradient-red w-100 text-center text-white"> Pay ₹499</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card rounded-lg shadow text-center card-body">
+                                <div class="icon mt-5 mx-auto p-5 my-3 icon-shape bg-gradient-blue text-white rounded-circle shadow">
+                                <i style="font-size:3rem;" class='bx bx-diamond'></i>
+                            </div>
+                            <p class="subheading-blue my-2 ">Daimond</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><span class="badge badge-primary p-2">600 Star Coins </span></li>
+                                <li class="list-group-item">Price ₹499</li>
+                                <li class="list-group-item"> Premium Content</li>
+                                <li class="list-group-item">60 Days Validity</li>
+                            </ul>
+                            <a href="#" class="btn bg-gradient-blue w-100 text-center text-white">Pay ₹499</a>
                             </div>
                         </div>
                         </div>
@@ -120,59 +167,17 @@ text-transform: uppercase;
                     </div>
                 </div>
             </div>
-            <div class="col-md-1 ">
-                <div class="row py-3 bg-white  border-bottom mb-2 rounded shadow ">
-                        <div class="col-12 d-flex align-items-center ">   
-                            <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
-                                <i class='bx bx-detail'></i>
-                            </div>
-                            <span class="pl-2">All</span>
+          
+            <div class="col-md-3 mt-3 mt-md-0">
+                <div class="col-md-12 px-0">
+                    <div class="card d-flex flex-row align-items-center rounded-lg pt-0 mt-0 shadow text-center card-body">
+                        <div class="icon mt-4  p-3  icon-shape bg-gradient-purple text-white rounded-circle shadow">
+                        <i style="font-size:1.6rem;" class='bx bx-rupee'></i>
                         </div>
+                        <span class="subheading-purple pt-4 pl-2  ">Pay as you go</span>
+                        <a href="#" class="btn mt-4 ml-auto btn-bg-gradient-purple">Recharge </a>
                     </div>
-
-                    <div class="row py-3 bg-white     border-bottom mb-2 rounded shadow">
-                        <div class="col-12 d-flex align-items-center ">   
-                            <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
-                                <i class='bx bxs-file-pdf'></i>
-                            </div>
-                            <span class="pl-2">DBMS</span>
-                        </div>
-                    </div>
-                    <div class="row py-3 bg-white     border-bottom mb-2 rounded shadow">
-                        <div class="col-12 d-flex align-items-center ">   
-                            <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
-                                <i class='bx bxs-file-pdf'></i>
-                            </div>
-                            <span class="pl-2">MPCA</span>
-                        </div>
-                    </div>
-                    <div class="row py-3 bg-white     border-bottom mb-2 rounded shadow">
-                        <div class="col-12 d-flex align-items-center ">   
-                            <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
-                                <i class='bx bxs-file-pdf'></i>
-                            </div>
-                            <span class="pl-2">LAA</span>
-                        </div>
-                    </div>
-                    <div class="row py-3 bg-white     border-bottom mb-2 rounded shadow">
-                        <div class="col-12 d-flex align-items-center ">   
-                            <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
-                                <i class='bx bxs-file-pdf'></i>
-                            </div>
-                            <span class="pl-2">DAA</span>
-                        </div>
-                    </div>
-                    <div class="row py-3 bg-white  rounded shadow   ">
-                        <div class="col-12 d-flex align-items-center ">   
-                            <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
-                                <i class='bx bxs-file-pdf'></i>
-                            </div>
-                            <span class="pl-2">TOC</span>
-                        </div>
-                    </div>
-                    
-            </div>
-            <div class="col-md-4 mt-3 mt-md-0">
+                </div>
                 <div class="card py-3">
                     <div class="card-body text-center">
                         <img style="height:180px; width:180px;" class="rounded-circle" src="uploads/profiles/<?php echo $_SESSION['profile_image']?>" alt="">
@@ -183,31 +188,7 @@ text-transform: uppercase;
                             <div class=" font-weight-300">
                                Electronic City Campus
                             </div>
-                            <div class="px-0 mx-0 mt-3">
-                                <div class="container p-2 ">
-                                    <div class="row">
-                                    <div class="col-4 d-flex align-items-center justify-content-center align-center">   
-                                        <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                                            <i class='bx bx-diamond'></i>
-                                        </div>
-                                        <span class="pl-2">Basic</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center justify-content-center align-center">
-                                        <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
-                                            <i class='bx bx-coin-stack'></i>
-                                        </div>
-                                        <span class="pl-2">1500</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center justify-content-center align-center">
-                                        <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
-                                        <i class='bx bxs-calendar' ></i>
-                                        </div>
-                                        <span class="pl-2">25 Days</span>
-                                    </div>
-                                </div>
-                              
-                            </div>
-                        </div>
+                           
                     </div>
                 </div>
             </div>
