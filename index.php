@@ -128,23 +128,23 @@
 
                             <div class="col-md-4">
                                 <div class="top-category text-center">
-                                    <h3><a href="#">Feature 1</a></h3>
+                                    <h3><a href="#">Find Study Material</a></h3>
                                     <span class="icon flaticon-idea"></span>
-                                    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dicta, sequi minima repellat totam nemo!</span></p>
+                                    <p><span>Access notes, question papers, and other useful study material, of any semester and any subject.</span></p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="top-category text-center">
-                                    <h3><a href="#">Feature 2</a></h3>
+                                    <h3><a href="#">Earn for Your Content</a></h3>
                                     <span class="icon flaticon-accounting"></span>
-                                    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dicta, sequi minima repellat totam nemo!</span></p>
+                                    <p><span>Upload your study material and get a rating based credit you can redeem.</span></p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="top-category text-center">
-                                    <h3><a href="#">Feature 3</a></h3>
+                                    <h3><a href="#">Request Notes</a></h3>
                                     <span class="icon flaticon-dish"></span>
-                                    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dicta, sequi minima repellat totam nemo!</span></p>
+                                    <p><span>Request notes from your favourite contributors.</span></p>
                                 </div>
                             </div>
 
