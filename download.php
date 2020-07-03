@@ -1,10 +1,15 @@
 <?php
+    if (isset($_SESSION['post_data'])) {
+        $_POST = $_SESSION['post_data'];
+        $_SERVER['REQUEST_METHOD'] = 'POST';
+        unset($_SESSION['post_data']);
+    }
     $id = decrypt(filter_input(INPUT_POST, 'mcrypt_encrypt'));
     if ($id && $_SERVER['REQUEST_METHOD'] == 'POST') {
         $db = getDbInstance();
         $fileName=$db->where('post_id',$id)->getValue('posts','file_url');
-        $path =$_SERVER['DOCUMENT_ROOT'].'content/'; 
-        $fullPath = $fileName;
+        $path =$_SERVER['DOCUMENT_ROOT']; 
+        $fullPath =  $path. $fileName;
 
         if ($fd = fopen ($fullPath, "r")) {
             $fsize = filesize($fullPath);

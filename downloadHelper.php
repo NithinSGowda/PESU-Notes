@@ -19,7 +19,8 @@
             );
             $db2->where('user_profile_id',$userId);
             if ($db2->update ('user_profiles', $dataDownload)){
-                include 'download.php';
+                $_SESSION['post_data'] = $_POST;
+                header('Location: download.php');
             }
         }  
         else
