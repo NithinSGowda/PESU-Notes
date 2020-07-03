@@ -285,7 +285,7 @@
                                  </div>
                              </div>
                              <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-                                <form method="post" action="download.php">
+                                <form method="post" action="downloadHelper.php">
                                     <input type="text" hidden value="<?php echo encrypt($post["post_id"])?>" name="mcrypt_encrypt">
                                     <button class="btn btn-primary py-2 download-file">Download</button>
                                 </form>

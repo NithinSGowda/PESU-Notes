@@ -34,44 +34,7 @@ text-transform: uppercase;
     <?php include 'includes/top-navbar.php'; ?>
     <div class="container-fluid mx-0 mt-4">
       <div class="row ">
-         
-            <div class="col-md-7 ">
-                <nav aria-label="breadcrumb mb-2">
-                    <ol class="breadcrumb bg-white p-3">
-                    <li class="breadcrumb-item ">Home</li>
-                        <li class="breadcrumb-item active" aria-current="page">Subscription</li>
-                    </ol>
-                </nav>
-               
-                <div class="row ">
-                   <div class="col-12">
-                   <div class="card subscription">
-                        <div class="card-body">
-                            <div style="height:100% " class="d-flex flex-column justify-content-center text-center align-center  ">
-                            <div class="icon  my-5 w-100"> <i class="fa fa-check"></i></div>
-                            <p class="lead text-center ">
-                            <br>
-                            <span class="h1 text-primary">Basic Plan</span><br>
-                            <span class="h1 text-primary mb-1">Successfully Subscribed!</span><br><br>
-                            We are happy to inform you that your subscription for basic plan is complete. 
-                            Your plan included an give away of 80 coins, with a validity of 30 days. 
-                            You may recieve a confirmination email from our side. <br>
-                            <span class="subheading pt-3">Thankyou for choosing PESU Notes</span>
-                            </p>
-                            <div class=" mt-3">
-                                    <li class="list-group-item  mt-1 border rounded bg-white d-flex justify-content-between"><span>Date</span><strong><span class="badge badge-primary p-2"><?php echo date('j F Y');?> </span></strong></li>
-                                    <li class="list-group-item  mt-1 border rounded bg-white d-flex justify-content-between"><span>TRANSACTION ID</span><strong>123456789</strong> </li>
-                                    <li class="list-group-item  mt-1 border rounded bg-white d-flex justify-content-between"><span>REWARD</span><strong>80 Coins</strong> </li>
-                                    <li class="list-group-item  mt-1 border rounded bg-white d-flex justify-content-between"><span>VALIDITY</span><strong>30 Days</strong> </li>
-                            </div>
-                            
-                        </div>
-                        </div>
-                    </div>
-                   </div>
-                </div>
-            </div>
-            <div class="col-md-1 ">
+      <div class="col-md-2 ">
                 <div class="row py-3 bg-white  border-bottom mb-2 rounded shadow ">
                         <div class="col-12 d-flex align-items-center ">   
                             <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
@@ -123,6 +86,43 @@ text-transform: uppercase;
                     </div>
                     
             </div>
+            <div class="col-md-6 ">
+                <nav aria-label="breadcrumb mb-2">
+                    <ol class="breadcrumb bg-white p-3">
+                    <li class="breadcrumb-item "><a href="/index.php">Home</a> </li>
+                        <li class="breadcrumb-item active" aria-current="page">Subscription</li>
+                    </ol>
+                </nav>
+               
+                <div class="row ">
+                   <div class="col-12">
+                   <div class="card subscription">
+                        <div class="card-body">
+                            <div style="height:100% " class="d-flex flex-column justify-content-center text-center align-center  ">
+                            <div class="icon  my-5 w-100"> <i class="fa fa-check"></i></div>
+                            <p class="lead text-center ">
+                            <br>
+                            <span class="h1 text-primary">Basic Plan</span><br>
+                            <span class="h1 text-primary mb-1">Successfully Subscribed!</span><br><br>
+                            We are happy to inform you that your subscription for basic plan is complete. 
+                            Your plan included an give away of 80 coins, with a validity of 30 days. 
+                            You may recieve a confirmination email from our side. <br>
+                            <span class="subheading pt-3">Thankyou for choosing PESU Notes</span>
+                            </p>
+                            <div class=" mt-3">
+                                    <li class="list-group-item  mt-1 border rounded bg-white d-flex justify-content-between"><span>Date</span><strong><span class="badge badge-primary p-2"><?php echo date('j F Y');?> </span></strong></li>
+                                    <li class="list-group-item  mt-1 border rounded bg-white d-flex justify-content-between"><span>TRANSACTION ID</span><strong>123456789</strong> </li>
+                                    <li class="list-group-item  mt-1 border rounded bg-white d-flex justify-content-between"><span>REWARD</span><strong>80 Coins</strong> </li>
+                                    <li class="list-group-item  mt-1 border rounded bg-white d-flex justify-content-between"><span>VALIDITY</span><strong>30 Days</strong> </li>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+            
             <div class="col-md-4 mt-3 mt-md-0">
                 <div class="card py-3">
                     <div class="card-body text-center">

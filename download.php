@@ -5,7 +5,7 @@
         $db = getDbInstance();
         $fileName=$db->where('post_id',$id)->getValue('posts','file_url');
         $path =$_SERVER['DOCUMENT_ROOT'].'content/'; 
-        $fullPath = $path.$fileName;
+        $fullPath = $fileName;
 
         if ($fd = fopen ($fullPath, "r")) {
             $fsize = filesize($fullPath);
