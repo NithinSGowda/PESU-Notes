@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if(!isset($_SESSION['user_logged_in'])){
+  header("Location: /signIn.php");
+}?>
 <?php require_once '/var/www/pesu/libraries/config/config.php';?>
 <!-- GETTING USER DETAILS -->
 <?php

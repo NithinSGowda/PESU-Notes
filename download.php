@@ -1,7 +1,8 @@
 <?php
     require_once '/var/www/pesu/libraries/config/config.php';
   	session_start();
-    $id = decrypt($_SESSION["post_data"]["mcrypt_encrypt"]);
+
+    $id = decrypt($_SESSION["post_data"]['mcrypt_encrypt']);
 
     if ($id) {
         $db = getDbInstance();
@@ -34,3 +35,5 @@
             exit;
     }else{
         die("Method Not allowed!");
+    }
+?>
