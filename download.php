@@ -1,5 +1,4 @@
 <?php
-    require_once '/var/www/pesu/libraries/config/config.php';
     $id = decrypt(filter_input(INPUT_POST, 'mcrypt_encrypt'));
     if ($id && $_SERVER['REQUEST_METHOD'] == 'POST') {
         $db = getDbInstance();
