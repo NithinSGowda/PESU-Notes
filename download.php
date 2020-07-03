@@ -1,11 +1,9 @@
 <?php
-    if (isset($_SESSION['post_data'])) {
-        $_POST = $_SESSION['post_data'];
-        $_SERVER['REQUEST_METHOD'] = 'POST';
-        unset($_SESSION['post_data']);
-    }
-    $id = decrypt(filter_input(INPUT_POST, 'mcrypt_encrypt'));
-    if ($id && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    require_once '/var/www/pesu/libraries/config/config.php';
+  	session_start();
+    $id = decrypt($_SESSION["post_data"]["mcrypt_encrypt"]);
+
+    if ($id) {
         $db = getDbInstance();
         $fileName=$db->where('post_id',$id)->getValue('posts','file_url');
         $path =$_SERVER['DOCUMENT_ROOT']; 
@@ -36,5 +34,3 @@
             exit;
     }else{
         die("Method Not allowed!");
-    }
-?>
