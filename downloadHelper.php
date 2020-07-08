@@ -1,13 +1,10 @@
 <?php
-    ini_set('display_startup_errors', 1); ini_set('display_errors', 1); error_reporting(-1);
     require_once '/var/www/pesu/libraries/config/config.php';
-    session_start();
-    if(!isset($_SESSION['user_logged_in'])){
-        header("Location: /signIn.php");
-      }
-    $download = $_SESSION["post_data"]['mcrypt_encrypt'];
+	session_start();
+	if(!isset($_SESSION['user_logged_in'])){
+      header("Location: signIn.php");
+    }
     $id = decrypt(filter_input(INPUT_POST, 'mcrypt_encrypt'));
-	if($download ===$id ){
     if ($id && $_SERVER['REQUEST_METHOD'] == 'POST') {
         $db3 = getDbInstance();
         $db3->where('user_id', $_SESSION['user_id']);
@@ -31,7 +28,5 @@
         }  
         else
             echo 'Insufficient Balance';
-    }}else{
-     header('Location: download.php');
     }
 ?>
