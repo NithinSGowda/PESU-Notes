@@ -57,7 +57,7 @@
     $data_to_db['created_by'] = $_SESSION['user_id'];
     $data_to_db['created_at'] = date('Y-m-d');
     $data_to_db['file_url'] = '/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'].'/'.$data_to_db['post_subject'].'/'.$insertValuesSQL;
-
+	  $_POST['file_url'] = $data_to_db['file_url'];
     $db = getDbInstance();
     $dbThumb = getDbInstance();
     $last_id = $db->insert('posts', $data_to_db);
@@ -65,7 +65,7 @@
     if ($last_id)
     {
         $_SESSION['success'] = 'Notes uploaded successfully!';
-        __main__(); 
+        main(); 
         header('Location: /upload.php');
     	  exit();
     }
@@ -93,7 +93,7 @@
       $antialiasing = "4"; 
       $preview_page = "1"; 
       $resolution = "120"; 
-      $output_file = $data_to_db['file_url'].".jpg"; 
+      $output_file = substr($_POST['file_url'],1).".jpg"; 
 
       $exec_command = "gs -dSAFER -dBATCH -dNOPAUSE -sDEVICE=" . $output_format . " "; 
       $exec_command .= "-dTextAlphaBits=". $antialiasing . " -dGraphicsAlphaBits=" . $antialiasing . " "; 
@@ -108,13 +108,14 @@
         $_SESSION['success'] = 'Notes uploaded successfully!';
       } 
       else { 
-        $_SESSION['failure'] = "Error while creating the Thumbnail.\n"; 
+        $_SESSION['failure'] = "Error while creating the Thumbnail.\n".$output_file; 
       } 
     } 
 
-    function __main__() { 
-
-      $input_file = $_GET["file"]; 
+    function main() { 
+    $input_file = substr($_POST['file_url'],1); 
+      echo '<script>alert('.$input_file.');</script>';
+    	echo $input_file;
 
       if ( is_pdf( $input_file ) ) { 
         // Create preview for the pdf 
