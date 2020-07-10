@@ -30,6 +30,7 @@
     if(!empty($fileNames)){ 
         foreach($_FILES['files']['name'] as $key=>$val){ 
             $fileName = uniqid().'-'.substr(basename($_FILES['files']['name'][$key]),0,25); 
+             // $fileName = uniqid();
             $targetFilePath = $targetDir . $fileName; 
             $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION); 
             if(in_array($fileType, $allowTypes)){ 
@@ -57,7 +58,7 @@
     $data_to_db['created_by'] = $_SESSION['user_id'];
     $data_to_db['created_at'] = date('Y-m-d');
     $data_to_db['file_url'] = '/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'].'/'.$data_to_db['post_subject'].'/'.$insertValuesSQL;
-	  $_POST['file_url'] = $data_to_db['file_url'];
+	$_POST['file_url'] = $data_to_db['file_url'];
     $db = getDbInstance();
     $dbThumb = getDbInstance();
     $last_id = $db->insert('posts', $data_to_db);
@@ -66,7 +67,7 @@
     {
         $_SESSION['success'] = 'Notes uploaded successfully!';
         main(); 
-        header('Location: /upload.php');
+        //header('Location: /upload.php');
     	  exit();
     }
     else
@@ -94,7 +95,9 @@
       $preview_page = "1"; 
       $resolution = "120"; 
       $output_file = substr($_POST['file_url'],1).".jpg"; 
-
+	  // $output_file = $_POST['file_url'].".jpg"; 
+      echo "<br>".$file."<br>";
+      $output_file = "nith.jpg";
       $exec_command = "gs -dSAFER -dBATCH -dNOPAUSE -sDEVICE=" . $output_format . " "; 
       $exec_command .= "-dTextAlphaBits=". $antialiasing . " -dGraphicsAlphaBits=" . $antialiasing . " "; 
       $exec_command .= "-dFirstPage=" . $preview_page . " -dLastPage=" . $preview_page . " "; 
@@ -103,7 +106,9 @@
 
       // echo "Executing command...\n"; 
       exec( $exec_command, $command_output, $return_val );  
-
+	  foreach( $command_output as $line ) { 
+          echo $line . "\n"; 
+      } 
       if ( !$return_val ) { 
         $_SESSION['success'] = 'Notes uploaded successfully!';
       } 
@@ -114,7 +119,6 @@
 
     function main() { 
     $input_file = substr($_POST['file_url'],1); 
-      echo '<script>alert('.$input_file.');</script>';
     	echo $input_file;
 
       if ( is_pdf( $input_file ) ) { 
