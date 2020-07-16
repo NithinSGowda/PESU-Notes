@@ -15,6 +15,8 @@
   {
     $data_to_db = array_filter($_POST);
     $targetDir = $PATH.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'].'/'.$data_to_db['post_subject'].'/'; 
+    echo $targetDir;
+    die();
     if( is_dir($PATH.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch']) === false )
         {
             mkdir($PATH.'/'.'content/'.$data_to_db['post_semester'].'/'.$data_to_db['post_branch'],0777,true);
