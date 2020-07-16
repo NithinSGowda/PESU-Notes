@@ -31,17 +31,15 @@ text-transform: uppercase;
     <?php include 'includes/top-navbar.php'; ?>
     <div class="container-fluid mx-0 mt-4">
       <div class="row ">
-        <div class="col-md-2 ">
-            <?php include 'panel-items/subjects.php';?>
-        </div>
-        <div  class="col-md-6 pr-4">
+        
+        <div  class="col-md-8 pr-4">
             <nav aria-label="breadcrumb mb-2">
                 <ol class="breadcrumb bg-white p-3">
                 <li class="breadcrumb-item "><a href="/audience">4 SEM </a> </li>
-                    <li class="breadcrumb-item active" aria-current="page">FEED</li>
+                    <li class="breadcrumb-item active" aria-current="page">Favourites</li>
                 </ol>
             </nav>
-            <?php include 'panel-items/latest-feed.php';?>
+            <?php include 'panel-items/get-favourite-feed.php';?>
         </div>
 
          

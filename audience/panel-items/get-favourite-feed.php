@@ -1,19 +1,20 @@
 <?php
-
+ $currentUser= $_SESSION['user_profile_id'];
 $page = filter_input(INPUT_GET, 'page');
 if (!$page) {
-	$page = 1;
+    $page = 1;
 }
 $pagelimit = 30;
-$order_by = 'post_id';
+$order_by = 'id';
 $order_dir = 'Desc';
 $db = getDbInstance();
 $db->orderBy($order_by, $order_dir);
 $db->pageLimit = $pagelimit;
-$db->where('post_semester', $_SESSION['user_semester']);
-$db->where('post_subject', $getFeedForSubject);
+$db->where('f.user_id', $currentUser);
+$db->join("posts p", "p.post_id=f.post_id", "LEFT");
 $db->join("auth_users u", "p.created_by=u.user_id", "LEFT");
-$posts=$db->orderBy('p.created_at','DESC')->get('posts p'); 
+$posts=$db->orderBy('p.created_at','DESC')->get('favourite_posts f'); 
+
 $total_pages = $db->totalPages;
 
 ?>
@@ -56,5 +57,5 @@ $total_pages = $db->totalPages;
 </div>
 
 <div class="text-center">
-    <?php echo paginationLinks($page, $total_pages, 'getfeedfor.php'); ?>
+    <?php echo paginationLinks($page, $total_pages, 'getFavourites.php'); ?>
 </div>

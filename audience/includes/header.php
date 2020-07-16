@@ -22,3 +22,4 @@
   }
   </style>
 </head>
+<?php include '/var/www/pesu/audience/helpers/globalHelper.php'?>

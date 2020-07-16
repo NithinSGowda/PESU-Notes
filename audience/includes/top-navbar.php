@@ -38,7 +38,7 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img class="profile-picture" alt="Image placeholder" src="uploads/profiles/<?php echo $_SESSION['profile_image']?>">
+                    <img class="profile-picture" alt="Image placeholder" src="/user/uploads/profiles/<?php echo $_SESSION['profile_image']?>">
                   </span>
                 </div>
               </a>

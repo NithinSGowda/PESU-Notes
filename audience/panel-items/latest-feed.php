@@ -19,10 +19,15 @@ $total_pages = $db->totalPages;
 
 
 <div style="overflow-y:scroll; height:750px;" id="scrollable-element" class="row ">
-    <?php foreach ($posts as $post):?>     
+    <?php foreach ($posts as $post):?>
+        <?php $isFavPost= isFavourite($post["post_id"]);?> 
         <div class="col-md-4">
             <div class="border border-white bg-white mb-3 rounded card-body ">
-            <p class="text-right mb-0 mt-0 pb-0"><a href="#" class="text-danger"><i class="bx bx-heart"></i></a></p>
+            <p class="text-right mb-0 mt-0 pb-0"><a <?php echo ($isFavPost)? 'data-state="fav"' : 'data-state="non-fav"' ?> 
+            data-postId="<?php echo $post["post_id"];?>" href="#" 
+            id="toggle-favourite" class="text-danger"> <?php echo ($isFavPost)? '<i class="fa fa-heart"></i>' : '<i class="bx bx-heart"></i>' ?></a>
+            </p>
+
             <div>
                 <h2 class="mr-3 text-black mb-0 "><a href="post.php?id=<?php echo $post["post_id"];?>"><?php echo $post["post_title"];?></a></h2>  
                 <span class="subadge"> <?php echo $post["user_name"];?></span>
