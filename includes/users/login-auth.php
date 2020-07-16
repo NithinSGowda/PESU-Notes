@@ -27,8 +27,13 @@
 				$_SESSION['user_srn'] = $row['user_srn'];
 				$user= $db->where('user_profile_id', $row['user_profile_id'])->getOne('user_profiles');
 				$_SESSION['profile_image'] ='default.jpg';
+				$_SESSION['user_semester'] ='not-available';
+
 				if($user['profile_image']){
 					$_SESSION['profile_image'] =$user['profile_image'];
+				}
+				if($user['profile_image']){
+					$_SESSION['user_semester'] =$user['class'];
 				}
 					
 				$_SESSION['user_name'] =$user['full_name'];
