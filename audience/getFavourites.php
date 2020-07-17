@@ -48,7 +48,7 @@ text-transform: uppercase;
         <div class="col-md-4 mt-3 mt-md-0">
             <div class="card py-3">
                 <div class="card-body text-center">
-                    <img style="height:180px; width:180px;" class="rounded-circle" src="uploads/profiles/<?php echo $_SESSION['profile_image']?>" alt="">
+                    <img style="height:180px; width:180px;" class="rounded-circle" src="/user/uploads/profiles/<?php echo $_SESSION['profile_image']?>" alt="">
                     <div class="text-center mt-3">
                         <h3 class="h1 text-capitalize">
                             Qazi Amaan <span class="font-weight-light">, CSE</span>
